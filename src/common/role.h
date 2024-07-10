@@ -15,6 +15,7 @@ public:
         this->row_id = row;
         this->col_id = col;
         this->speed=5;
+        this->radius=20;
         moveTimer = new QTimer(this);  
         connect(moveTimer, &QTimer::timeout, &Role::handleMovement);  
         // 设置定时器间隔  
