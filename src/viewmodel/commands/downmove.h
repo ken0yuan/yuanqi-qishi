@@ -1,10 +1,9 @@
 #ifndef DOWNMOVE_H
 #define DOWNMOVE_H
-#include "../../common/etlbase.h"
+#include "../../common/base.h"
 class downmoveCommand: public ICommandBase
 {
 public:
-    virtual void set(int move);
     virtual void Exec();
 private:
     int ismove;

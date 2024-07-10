@@ -11,9 +11,9 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "D:\\Dev-Cpp\\TDM-GCC-64\\bin\\gcc.exe",
+            "compilerPath": "C:/TDM-GCC-64/bin/g++.exe",
             "cStandard": "c17",
-            "cppStandard": "gnu++14",
+            "cppStandard": "c++23",
             "intelliSenseMode": "windows-gcc-x64"
         }
     ],
