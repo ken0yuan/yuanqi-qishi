@@ -27,6 +27,7 @@ public:
     int getHP() const {return HP;};
     int getSP() const {return SP;};
     int getMP() const {return MP;};
+    int getspeed() const {return speed;};
     void setRow(int *row){this->row_id = row;};
     void setCol(int *col){this->col_id = col;};
     bool shot(int consume)

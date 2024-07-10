@@ -3,7 +3,8 @@
 #include "../model/model.h"
 #include "commands/move.h"
 #include "../common/base.h"
-class viewmodel
+#include "sink/viewmodelsink.h"
+class viewmodel:public Proxy_CommandNotification<viewmodel>,public Proxy_PropertyNotification<viewmodel>
 {
 public:
     viewmodel();
@@ -13,5 +14,6 @@ public:
 private:
     std::shared_ptr<dataModel> datamodel;
     std::shared_ptr<moveCommand> cmd_move;
+    std::shared_ptr<viewmodelSink> m_sink;
 };
 #endif
