@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/周俊/Desktop/c++/yuanqi_qishi/build",
+  "command": "C:\\TDM-GCC-64\\bin\\c++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/yuanqi_qishi.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\yuanqi_qishi.dir\\yuanqi_qishi_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\周俊\\Desktop\\c++\\yuanqi_qishi\\build\\yuanqi_qishi_autogen\\mocs_compilation.cpp",
+  "file": "C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/yuanqi_qishi_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/yuanqi_qishi.dir/yuanqi_qishi_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "C:/Users/周俊/Desktop/c++/yuanqi_qishi/build",
+  "command": "C:\\TDM-GCC-64\\bin\\c++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/yuanqi_qishi.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\yuanqi_qishi.dir\\src\\main.cpp.obj -c C:\\Users\\周俊\\Desktop\\c++\\yuanqi_qishi\\src\\main.cpp",
+  "file": "C:/Users/周俊/Desktop/c++/yuanqi_qishi/src/main.cpp",
+  "output": "CMakeFiles/yuanqi_qishi.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/周俊/Desktop/c++/yuanqi_qishi/build",
+  "command": "C:\\TDM-GCC-64\\bin\\c++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/yuanqi_qishi.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\yuanqi_qishi.dir\\src\\yuanqi_qishi.cpp.obj -c C:\\Users\\周俊\\Desktop\\c++\\yuanqi_qishi\\src\\yuanqi_qishi.cpp",
+  "file": "C:/Users/周俊/Desktop/c++/yuanqi_qishi/src/yuanqi_qishi.cpp",
+  "output": "CMakeFiles/yuanqi_qishi.dir/src/yuanqi_qishi.cpp.obj"
+}
+]

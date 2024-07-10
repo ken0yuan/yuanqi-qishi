@@ -19,7 +19,7 @@ public:
     std::shared_ptr<Role> get_role() throw();
     std::shared_ptr<Map> get_map() throw();
     bool move(int i,int j);
-    bool coli();
+    bool coli(int i,int j);
 private:
     std::shared_ptr<Role> r;
     std::shared_ptr<Map> m;

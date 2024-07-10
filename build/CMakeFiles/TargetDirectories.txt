@@ -1,0 +1,5 @@
+C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/yuanqi_qishi.dir
+C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/edit_cache.dir
+C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/rebuild_cache.dir
+C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir
+C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/yuanqi_qishi_autogen.dir

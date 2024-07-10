@@ -706,3 +706,269 @@ events:
       Running the CXX compiler's linker: "C:/TDM-GCC-64/x86_64-w64-mingw32/bin/ld.exe" "-v"
       GNU ld (GNU Binutils) 2.36.1
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake:99 (CHECK_CXX_SOURCE_COMPILES)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake:27 (_qt_internal_find_third_party_dependencies)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:124 (include)"
+      - "CMakeLists.txt:10 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-emmlih"
+      binary: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-emmlih"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-emmlih'
+        
+        Run Build Command(s): E:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 C:/TDM-GCC-64/bin/mingw32-make.exe -f Makefile cmTC_49579/fast
+        C:/TDM-GCC-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_49579.dir\\build.make CMakeFiles/cmTC_49579.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-emmlih'
+        Building CXX object CMakeFiles/cmTC_49579.dir/src.cxx.obj
+        C:\\TDM-GCC-64\\bin\\c++.exe -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++11 -o CMakeFiles\\cmTC_49579.dir\\src.cxx.obj -c C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-emmlih\\src.cxx
+        c++.exe: 错误：C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-emmlih\\src.cxx：No such file or directory
+        c++.exe: 致命错误：没有输入文件
+        编译中断。
+        CMakeFiles\\cmTC_49579.dir\\build.make:76: recipe for target 'CMakeFiles/cmTC_49579.dir/src.cxx.obj' failed
+        mingw32-make.exe[1]: *** [CMakeFiles/cmTC_49579.dir/src.cxx.obj] Error 1
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-emmlih'
+        Makefile:126: recipe for target 'cmTC_49579/fast' failed
+        mingw32-make.exe: *** [cmTC_49579/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake:136 (try_compile)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake:169 (_threads_check_flag_pthread)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake:27 (_qt_internal_find_third_party_dependencies)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:124 (include)"
+      - "CMakeLists.txt:10 (find_package)"
+    checks:
+      - "Check if compiler accepts -pthread"
+    directories:
+      source: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fbco1e"
+      binary: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fbco1e"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "THREADS_HAVE_PTHREAD_ARG"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fbco1e'
+        
+        Run Build Command(s): E:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 C:/TDM-GCC-64/bin/mingw32-make.exe -f Makefile cmTC_a2578/fast
+        C:/TDM-GCC-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a2578.dir\\build.make CMakeFiles/cmTC_a2578.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fbco1e'
+        Building CXX object CMakeFiles/cmTC_a2578.dir/CheckForPthreads.cxx.obj
+        C:\\TDM-GCC-64\\bin\\c++.exe   -std=gnu++11 -o CMakeFiles\\cmTC_a2578.dir\\CheckForPthreads.cxx.obj -c C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fbco1e\\CheckForPthreads.cxx
+        c++.exe: 错误：C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fbco1e\\CheckForPthreads.cxx：No such file or directory
+        c++.exe: 致命错误：没有输入文件
+        编译中断。
+        CMakeFiles\\cmTC_a2578.dir\\build.make:76: recipe for target 'CMakeFiles/cmTC_a2578.dir/CheckForPthreads.cxx.obj' failed
+        mingw32-make.exe[1]: *** [CMakeFiles/cmTC_a2578.dir/CheckForPthreads.cxx.obj] Error 1
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fbco1e'
+        Makefile:126: recipe for target 'cmTC_a2578/fast' failed
+        mingw32-make.exe: *** [cmTC_a2578/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake:27 (_qt_internal_find_third_party_dependencies)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:124 (include)"
+      - "CMakeLists.txt:10 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-mk9lv5"
+      binary: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-mk9lv5"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-mk9lv5'
+        
+        Run Build Command(s): E:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 C:/TDM-GCC-64/bin/mingw32-make.exe -f Makefile cmTC_50311/fast
+        C:/TDM-GCC-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_50311.dir\\build.make CMakeFiles/cmTC_50311.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-mk9lv5'
+        Building CXX object CMakeFiles/cmTC_50311.dir/CheckFunctionExists.cxx.obj
+        C:\\TDM-GCC-64\\bin\\c++.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++11 -o CMakeFiles\\cmTC_50311.dir\\CheckFunctionExists.cxx.obj -c C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mk9lv5\\CheckFunctionExists.cxx
+        c++.exe: 错误：C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mk9lv5\\CheckFunctionExists.cxx：No such file or directory
+        c++.exe: 致命错误：没有输入文件
+        编译中断。
+        CMakeFiles\\cmTC_50311.dir\\build.make:76: recipe for target 'CMakeFiles/cmTC_50311.dir/CheckFunctionExists.cxx.obj' failed
+        mingw32-make.exe[1]: *** [CMakeFiles/cmTC_50311.dir/CheckFunctionExists.cxx.obj] Error 1
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-mk9lv5'
+        Makefile:126: recipe for target 'cmTC_50311/fast' failed
+        mingw32-make.exe: *** [cmTC_50311/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake:27 (_qt_internal_find_third_party_dependencies)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:124 (include)"
+      - "CMakeLists.txt:10 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fewmfu"
+      binary: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fewmfu"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fewmfu'
+        
+        Run Build Command(s): E:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 C:/TDM-GCC-64/bin/mingw32-make.exe -f Makefile cmTC_c7bfc/fast
+        C:/TDM-GCC-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c7bfc.dir\\build.make CMakeFiles/cmTC_c7bfc.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fewmfu'
+        Building CXX object CMakeFiles/cmTC_c7bfc.dir/CheckFunctionExists.cxx.obj
+        C:\\TDM-GCC-64\\bin\\c++.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -std=gnu++11 -o CMakeFiles\\cmTC_c7bfc.dir\\CheckFunctionExists.cxx.obj -c C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fewmfu\\CheckFunctionExists.cxx
+        c++.exe: 错误：C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fewmfu\\CheckFunctionExists.cxx：No such file or directory
+        c++.exe: 致命错误：没有输入文件
+        编译中断。
+        CMakeFiles\\cmTC_c7bfc.dir\\build.make:76: recipe for target 'CMakeFiles/cmTC_c7bfc.dir/CheckFunctionExists.cxx.obj' failed
+        mingw32-make.exe[1]: *** [CMakeFiles/cmTC_c7bfc.dir/CheckFunctionExists.cxx.obj] Error 1
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-fewmfu'
+        Makefile:126: recipe for target 'cmTC_c7bfc/fast' failed
+        mingw32-make.exe: *** [cmTC_c7bfc/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:33 (_qt_internal_find_third_party_dependencies)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:45 (include)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:111 (find_dependency)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_qt_dependencies)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:169 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    checks:
+      - "Performing Test HAVE_STDATOMIC"
+    directories:
+      source: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-b9tmjs"
+      binary: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-b9tmjs"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "HAVE_STDATOMIC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-b9tmjs'
+        
+        Run Build Command(s): E:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 C:/TDM-GCC-64/bin/mingw32-make.exe -f Makefile cmTC_f21a3/fast
+        C:/TDM-GCC-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_f21a3.dir\\build.make CMakeFiles/cmTC_f21a3.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-b9tmjs'
+        Building CXX object CMakeFiles/cmTC_f21a3.dir/src.cxx.obj
+        C:\\TDM-GCC-64\\bin\\c++.exe -DHAVE_STDATOMIC  -std=gnu++11 -o CMakeFiles\\cmTC_f21a3.dir\\src.cxx.obj -c C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9tmjs\\src.cxx
+        c++.exe: 错误：C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b9tmjs\\src.cxx：No such file or directory
+        c++.exe: 致命错误：没有输入文件
+        编译中断。
+        CMakeFiles\\cmTC_f21a3.dir\\build.make:76: recipe for target 'CMakeFiles/cmTC_f21a3.dir/src.cxx.obj' failed
+        mingw32-make.exe[1]: *** [CMakeFiles/cmTC_f21a3.dir/src.cxx.obj] Error 1
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-b9tmjs'
+        Makefile:126: recipe for target 'cmTC_f21a3/fast' failed
+        mingw32-make.exe: *** [cmTC_f21a3/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake:41 (check_cxx_source_compiles)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:33 (_qt_internal_find_third_party_dependencies)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:45 (include)"
+      - "E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:111 (find_dependency)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_qt_dependencies)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
+      - "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:169 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    checks:
+      - "Performing Test HAVE_STDATOMIC_WITH_LIB"
+    directories:
+      source: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-298yki"
+      binary: "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-298yki"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;E:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "HAVE_STDATOMIC_WITH_LIB"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-298yki'
+        
+        Run Build Command(s): E:/Qt/Tools/CMake_64/bin/cmake.exe -E env VERBOSE=1 C:/TDM-GCC-64/bin/mingw32-make.exe -f Makefile cmTC_0f155/fast
+        C:/TDM-GCC-64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_0f155.dir\\build.make CMakeFiles/cmTC_0f155.dir/build
+        mingw32-make.exe[1]: Entering directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-298yki'
+        Building CXX object CMakeFiles/cmTC_0f155.dir/src.cxx.obj
+        C:\\TDM-GCC-64\\bin\\c++.exe -DHAVE_STDATOMIC_WITH_LIB  -std=gnu++11 -o CMakeFiles\\cmTC_0f155.dir\\src.cxx.obj -c C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-298yki\\src.cxx
+        c++.exe: 错误：C:\\Users\\鍛ㄤ繆\\Desktop\\c++\\yuanqi_qishi\\build\\CMakeFiles\\CMakeScratch\\TryCompile-298yki\\src.cxx：No such file or directory
+        c++.exe: 致命错误：没有输入文件
+        编译中断。
+        CMakeFiles\\cmTC_0f155.dir\\build.make:76: recipe for target 'CMakeFiles/cmTC_0f155.dir/src.cxx.obj' failed
+        mingw32-make.exe[1]: *** [CMakeFiles/cmTC_0f155.dir/src.cxx.obj] Error 1
+        mingw32-make.exe[1]: Leaving directory 'C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/CMakeScratch/TryCompile-298yki'
+        Makefile:126: recipe for target 'cmTC_0f155/fast' failed
+        mingw32-make.exe: *** [cmTC_0f155/fast] Error 2
+        
+      exitCode: 2
+...
