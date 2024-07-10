@@ -2,6 +2,10 @@
     "qtConfigure.qtKitDir": "E:/Qt/6.7.2/mingw_64",
     "files.associations": {
         "string": "cpp",
+<<<<<<< HEAD
+=======
+        "any": "cpp",
+>>>>>>> d33a1fdd731f01e023bac03242cdd527d9b9b4c5
         "array": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
@@ -44,6 +48,10 @@
         "future": "cpp",
         "initializer_list": "cpp",
         "iosfwd": "cpp",
+<<<<<<< HEAD
+=======
+        "iostream": "cpp",
+>>>>>>> d33a1fdd731f01e023bac03242cdd527d9b9b4c5
         "istream": "cpp",
         "limits": "cpp",
         "mutex": "cpp",
@@ -55,6 +63,10 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
+<<<<<<< HEAD
     },
     "cmake.generator": "MinGW Makefiles"
+=======
+    }
+>>>>>>> d33a1fdd731f01e023bac03242cdd527d9b9b4c5
 }
