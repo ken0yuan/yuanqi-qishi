@@ -105,4 +105,38 @@ public:
     int row;
     int col;
 };
+
+class MoveParameter{
+public:
+    MoveParameter() throw();
+    MoveParameter(const MoveParameter& src);
+    MoveParameter(MoveParameter&& src);
+
+    MoveParameter(int a, int b)
+    {
+        x = a;
+        y = b;
+    };
+    MoveParameter& operator=(const MoveParameter& src)
+    {
+        if (this!=&src)
+        {
+            y = src.y;
+            x = src.x;
+        }
+        return *this;
+    };
+    MoveParameter& operator=(MoveParameter&& src)
+    {
+        if (this!=&src)
+        {
+            y = src.y;
+            x = src.x;
+        }
+        return *this;
+    };
+public:
+    int y;
+    int x;
+};
 #endif
