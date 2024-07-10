@@ -10,12 +10,10 @@
 class Role :public QWidget{
 friend class Weapon;
 public:
-    Role(int *row, int *col, std::string type)
+    Role(int *row, int *col)
     {
         this->row_id = row;
         this->col_id = col;
-        if(type == "pig"||type == "boss" ||type == "archer")
-            this->type = type;
         this->speed=5;
         moveTimer = new QTimer(this);  
         connect(moveTimer, &QTimer::timeout, &Role::handleMovement);  
@@ -29,7 +27,6 @@ public:
     int getHP() const {return HP;};
     int getSP() const {return SP;};
     int getMP() const {return MP;};
-    std::string getType() const{ return type;};
     void setRow(int *row){this->row_id = row;};
     void setCol(int *col){this->col_id = col;};
     bool shot(int consume)
@@ -57,11 +54,6 @@ public:
     {
     };//暂定不受伤害多少时间回盾，不回蓝条和血条
     void setRadius(int radius){this->radius = radius;};
-    void setType(std::string type)
-    {
-        if(type == "pig"||type == "boss" ||type == "archer")
-            this->type = type;
-    };
 protected:  
     void keyPressEvent(QKeyEvent *event) override {  
         if (event->key() == Qt::Key_Left||event->key() == Qt::Key_Right||event->key() == Qt::Key_Up||event->key() == Qt::Key_Down){  
@@ -97,7 +89,6 @@ private:
     int SP;//盾条
     int MP;//蓝条
     int speed;
-    std::string type;
     QTimer* moveTimer;
 };
 #endif

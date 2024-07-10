@@ -5,21 +5,20 @@
 #include "../common/bullet.h"
 #include "../common/block.h"
 #include "../common/weapon.h"
+#include "../common/base.h"
 #include <memory>
 #include <QObject>
 #include <QString>
+#include <QtDebug>
 
-class dataModel
+class dataModel:public Proxy_PropertyNotification<dataModel>
 {
 public:
     dataModel();
     std::shared_ptr<Role> get_role() throw();
-    bool leftmove();
-    bool rightmove();
-    bool upmove();
-    bool downmove();
+    bool move(int i,int j);
 private:
     std::shared_ptr<Role> r;
 };
 
-#endif // SWMODEL_H
+#endif // MODEL_H
