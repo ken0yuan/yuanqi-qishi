@@ -1,7 +1,7 @@
 #include "model.h"
 dataModel::dataModel():
-    r(std::make_shared<Role>(500,500)),
-    m(std::make_shared<Map>("../../picture/map.txt"))
+    r(std::make_shared<Role>(250,250)),
+    m(std::make_shared<Map>("../map.txt"))
 {}
 std::shared_ptr<Role> dataModel::get_role() throw()
 {
@@ -13,13 +13,14 @@ std::shared_ptr<Map> dataModel::get_map() throw()
 }
 bool dataModel::move(int i,int j)
 {
-    if(coli(i,j)==false)
+    double di=sqrt(i*i+j*j);
+    if((i!=0||j!=0)&&coli(i,j)==false)
     {
         int x=r->getRowId();
         int y=r->getColId();
         int *x1,*y1;
-        *x1=x+i*r->getspeed();
-        *y1=y+j*r->getspeed();
+        *x1=x+(int)(i*r->getspeed()/di);
+        *y1=y+(int)(j*r->getspeed()/di);
         r->setRow(x1);
         r->setCol(y1);
         return true;
