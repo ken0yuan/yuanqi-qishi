@@ -76,19 +76,19 @@ void MainWindow::paintEvent(QPaintEvent *event)
     switch (R->getdirection)
     {
     case 1:
-        setPixmap(upImage);
+        painter.drawPixmap(R->getRowId,R->getColId,20,20,upImage);
         break;
     case 2:
-        setPixmap(downImage);
+        painter.drawPixmap(R->getRowId,R->getColId,20,20,downImage);
         break;
     case 3:
-        setPixmap(leftImage);
+        painter.drawPixmap(R->getRowId,R->getColId,20,20,leftImage);
         break;
     case 4:
-        setPixmap(rightImage);
+        painter.drawPixmap(R->getRowId,R->getColId,20,20,rightImage);
         break;
     case 0:
-        setPixmap(rightImage);
+        painter.drawPixmap(R->getRowId,R->getColId,20,20,rightImage);
         break;
     }
 };
