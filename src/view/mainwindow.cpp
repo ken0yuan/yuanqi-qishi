@@ -1,8 +1,9 @@
-#include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "mainwindow.h"
 #include <QKeyEvent>
-#include <qwidget.h>
 #include <any>
+
+QPainter *paint_my_window;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -73,22 +74,22 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPixmap downImage = QPixmap("../images/l3.png");
     QPixmap leftImage = QPixmap("../images/l3.png");
     QPixmap rightImage = QPixmap("../images/r1.png");
-    switch (R->getdirection)
+    switch (R->getdirection())
     {
     case 1:
-        painter.drawPixmap(R->getRowId,R->getColId,20,20,upImage);
+        painter.drawPixmap(R->getRowId(),R->getColId(),20,20,upImage);
         break;
     case 2:
-        painter.drawPixmap(R->getRowId,R->getColId,20,20,downImage);
+        painter.drawPixmap(R->getRowId(),R->getColId(),20,20,downImage);
         break;
     case 3:
-        painter.drawPixmap(R->getRowId,R->getColId,20,20,leftImage);
+        painter.drawPixmap(R->getRowId(),R->getColId(),20,20,leftImage);
         break;
     case 4:
-        painter.drawPixmap(R->getRowId,R->getColId,20,20,rightImage);
+        painter.drawPixmap(R->getRowId(),R->getColId(),20,20,rightImage);
         break;
     case 0:
-        painter.drawPixmap(R->getRowId,R->getColId,20,20,rightImage);
+        painter.drawPixmap(R->getRowId(),R->getColId(),20,20,rightImage);
         break;
     }
 };

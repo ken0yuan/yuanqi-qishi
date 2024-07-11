@@ -1,0 +1,6 @@
+C:/Users/user/Desktop/name/C++/yuanqi_qishi/CMakeFiles/yuanqi_qishi.dir
+C:/Users/user/Desktop/name/C++/yuanqi_qishi/CMakeFiles/copy_audio_plugins.dir
+C:/Users/user/Desktop/name/C++/yuanqi_qishi/CMakeFiles/edit_cache.dir
+C:/Users/user/Desktop/name/C++/yuanqi_qishi/CMakeFiles/rebuild_cache.dir
+C:/Users/user/Desktop/name/C++/yuanqi_qishi/CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir
+C:/Users/user/Desktop/name/C++/yuanqi_qishi/CMakeFiles/yuanqi_qishi_autogen.dir

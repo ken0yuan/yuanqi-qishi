@@ -1,6 +1,8 @@
 #include "model.h"
+int x=250;
+int y=250;
 dataModel::dataModel():
-    r(std::make_shared<Role>(250,250)),
+    r(std::make_shared<Role>(&x,&y)),
     m(std::make_shared<Map>("../map.txt"))
 {
     r->setGeometry(250,250,100,100);
@@ -50,6 +52,7 @@ bool dataModel::move(int i,int j)
     }//如果没有碰撞就可以正常移动
     Fire_OnPropertyChanged("Nomove");
     r->setdirection(0);
+    return true;
 }
 bool dataModel::coli(int i,int j)
 {

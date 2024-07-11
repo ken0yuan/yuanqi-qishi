@@ -14,6 +14,7 @@
 #include <QPushButton>
 #include <QString>
 #include <QMessageBox>
+#include <QWidget>
 #include <any>
 #include "../common/parameter.h"
 #include "../common/role.h"
@@ -36,7 +37,7 @@ public:
     void set_role(const std::shared_ptr<Role> r);
     void set_map(const std::shared_ptr<Map> m);
     void init();
-    std::shared_ptr<IPropertyNotification> get_property_sink();
+    std::shared_ptr<IPropertyNotification> get_property_sink() throw();
     
 protected:
     virtual void paintEvent(QPaintEvent *event);

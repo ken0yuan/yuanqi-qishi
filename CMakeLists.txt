@@ -58,8 +58,8 @@ add_executable(yuanqi_qishi
             src/common/role.h
             src/common/block.h
             src/common/map.h
-            src/view/mainwindow.cpp
             src/view/mainwindow.h
+            src/view/mainwindow.cpp
             src/view/sink/mainwindowsink.cpp
             src/view/sink/mainwindowsink.h
             src/viewmodel/viewmodel.cpp

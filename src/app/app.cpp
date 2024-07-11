@@ -17,7 +17,7 @@ bool App::Init(MainWindow& w)
     w.set_move_command(m_ViewModel->get_move_command());
     // notifications
     m_ViewModel->AddPropertyNotification(w.get_property_sink());
-    w.setWindowTitle("Mine Sweeping");
+    w.setWindowTitle("YUAN QI QI SHI");
     w.init();
     w.show();
     return true;

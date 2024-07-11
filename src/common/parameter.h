@@ -108,9 +108,13 @@ public:
 
 class MoveParameter{
 public:
-    MoveParameter() throw();
-    MoveParameter(const MoveParameter& src);
-    MoveParameter(MoveParameter&& src);
+    MoveParameter() throw(){};
+    MoveParameter(const MoveParameter& src):x(src.x),y(src.y){};
+    MoveParameter(MoveParameter&& src)
+    {
+        y = static_cast<int&&>(src.y);
+        x = static_cast<int&&>(src.x);
+    };
 
     MoveParameter(int a, int b)
     {

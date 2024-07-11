@@ -1,0 +1,27 @@
+{
+	"BUILD_DIR" : "C:/Users/user/Desktop/name/C++/yuanqi_qishi/yuanqi_qishi_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/user/Desktop/name/C++/yuanqi_qishi",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/user/Desktop/name/C++/yuanqi_qishi",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/user/Desktop/name/C++/yuanqi_qishi",
+	"CMAKE_SOURCE_DIR" : "C:/Users/user/Desktop/name/C++/yuanqi_qishi",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "MinGW Makefiles",
+	"INCLUDE_DIR" : "C:/Users/user/Desktop/name/C++/yuanqi_qishi/yuanqi_qishi_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/images/l3.png",
+		"C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/images/112.png",
+		"C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/images/r1.png"
+	],
+	"LOCK_FILE" : "C:/Users/user/Desktop/name/C++/yuanqi_qishi/CMakeFiles/yuanqi_qishi_autogen.dir/AutoRcc_images_UVLADIE3JM_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "images" ],
+	"OUTPUT_CHECKSUM" : "UVLADIE3JM",
+	"OUTPUT_NAME" : "qrc_images.cpp",
+	"RCC_EXECUTABLE" : "E:/qqt/5.15.2/mingw81_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/Users/user/Desktop/name/C++/yuanqi_qishi/CMakeFiles/yuanqi_qishi_autogen.dir/AutoRcc_images_UVLADIE3JM_Used.txt",
+	"SOURCE" : "C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/images.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}
