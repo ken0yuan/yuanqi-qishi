@@ -29,8 +29,10 @@ public:
     int getSP() const {return SP;};
     int getMP() const {return MP;};
     int getspeed() const {return speed;};
+    int getdirection() const {return direction;};
     void setRow(int *row){this->row_id = row;};
     void setCol(int *col){this->col_id = col;};
+    void setdirection(int dir){this->direction = dir;};
     bool shot(int consume)
     {
         if(MP>=consume)
@@ -91,6 +93,7 @@ private:
     int SP;//盾条
     int MP;//蓝条
     int speed;
+    int direction;
     QTimer* moveTimer;
 };
 #endif

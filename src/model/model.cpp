@@ -2,7 +2,10 @@
 dataModel::dataModel():
     r(std::make_shared<Role>(250,250)),
     m(std::make_shared<Map>("../map.txt"))
-{}
+{
+    r->setGeometry(250,250,100,100);
+    r->show();
+}
 std::shared_ptr<Role> dataModel::get_role() throw()
 {
     return r;
@@ -17,13 +20,25 @@ bool dataModel::move(int i,int j)
     if((i!=0||j!=0)&&coli(i,j)==false)
     {
         if(i<0)
+        {
             Fire_OnPropertyChanged("leftmove");
+            r->setdirection(1);
+        }
         else if(i>0)
+        {
             Fire_OnPropertyChanged("rightmove");
+            r->setdirection(2);
+        }
         else if(j<0)
+        {
             Fire_OnPropertyChanged("downmove");
+            r->setdirection(3);
+        }
         else
+        {
             Fire_OnPropertyChanged("upmove");
+            r->setdirection(4);
+        }
         int x=r->getRowId();
         int y=r->getColId();
         int *x1,*y1;
@@ -34,6 +49,7 @@ bool dataModel::move(int i,int j)
         return true;
     }//如果没有碰撞就可以正常移动
     Fire_OnPropertyChanged("Nomove");
+    r->setdirection(0);
 }
 bool dataModel::coli(int i,int j)
 {
