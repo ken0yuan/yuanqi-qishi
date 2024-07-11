@@ -16,6 +16,14 @@ bool dataModel::move(int i,int j)
     double di=sqrt(i*i+j*j);
     if((i!=0||j!=0)&&coli(i,j)==false)
     {
+        if(i<0)
+            Fire_OnPropertyChanged("leftmove");
+        else if(i>0)
+            Fire_OnPropertyChanged("rightmove");
+        else if(j<0)
+            Fire_OnPropertyChanged("downmove");
+        else
+            Fire_OnPropertyChanged("upmove");
         int x=r->getRowId();
         int y=r->getColId();
         int *x1,*y1;
@@ -25,6 +33,7 @@ bool dataModel::move(int i,int j)
         r->setCol(y1);
         return true;
     }//如果没有碰撞就可以正常移动
+    Fire_OnPropertyChanged("Nomove");
 }
 bool dataModel::coli(int i,int j)
 {
