@@ -3,6 +3,8 @@
 moveCommand::moveCommand(viewmodel* p) throw():pvm(p),param(0,0){}
 void moveCommand::SetParameter(const std::any& lparam)
 {
+    qDebug()<<"SetParameter";
+    qDebug()<<std::any_cast<MoveParameter>(lparam).x<<std::any_cast<MoveParameter>(lparam).y;
     param=std::any_cast<MoveParameter>(lparam);
 }
 void moveCommand::Exec()

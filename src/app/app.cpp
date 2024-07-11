@@ -13,6 +13,8 @@ bool App::Init(MainWindow& w)
     m_ViewModel->set_model(m_Model);
     //binding
     // properties
+    w.set_role(m_ViewModel->get_role());
+    w.set_map(m_ViewModel->get_map());
     // commands
     w.set_move_command(m_ViewModel->get_move_command());
     // notifications

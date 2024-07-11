@@ -5,6 +5,7 @@ viewmodel::viewmodel():
 {}
 void viewmodel::set_model(const std::shared_ptr<dataModel>& model)
 {
+    qDebug()<<"set_model";
     datamodel=model;
     datamodel->AddPropertyNotification(std::static_pointer_cast<IPropertyNotification>(m_sink));
 }
@@ -26,5 +27,7 @@ std::shared_ptr<Map> viewmodel::get_map()
 }
 bool viewmodel::move(int i,int j)
 {
+    qDebug()<<"viewmodelmove";
+    qDebug()<<i<<j;
     return datamodel->move(i,j);
 }

@@ -3,6 +3,7 @@
 #include"block.h"
 #include<vector>
 #include<string>
+#include<QDebug>
 #include<fstream>
 #include<iostream>
 #include<sstream>
@@ -11,6 +12,7 @@ public:
     Map(std::string path)
     {
         std::ifstream file(path);
+        qDebug()<<"open file";
         if(!file.is_open())
         {
             std::cout<<"open file failed"<<std::endl;

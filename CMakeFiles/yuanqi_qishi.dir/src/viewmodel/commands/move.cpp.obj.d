@@ -351,6 +351,11 @@ CMakeFiles/yuanqi_qishi.dir/src/viewmodel/commands/move.cpp.obj: \
  C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/common/weapon.h \
  C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/common/map.h \
  C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/common/block.h \
+ E:/qqt/5.15.2/mingw81_64/include/QtCore/QDebug \
+ E:/qqt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
+ E:/qqt/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
+ E:/qqt/5.15.2/mingw81_64/include/QtCore/qlocale.h \
+ E:/qqt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
  D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/fstream \
  D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/codecvt.h \
  D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
@@ -360,9 +365,5 @@ CMakeFiles/yuanqi_qishi.dir/src/viewmodel/commands/move.cpp.obj: \
  D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/sstream \
  D:/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++/bits/sstream.tcc \
  E:/qqt/5.15.2/mingw81_64/include/QtCore/QtDebug \
- E:/qqt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
- E:/qqt/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
- E:/qqt/5.15.2/mingw81_64/include/QtCore/qlocale.h \
- E:/qqt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
  C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/viewmodel/commands/move.h \
  C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/viewmodel/sink/viewmodelsink.h

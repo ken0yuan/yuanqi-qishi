@@ -1,9 +1,7 @@
 #include "model.h"
-int x=250;
-int y=250;
 dataModel::dataModel():
-    r(std::make_shared<Role>(&x,&y)),
-    m(std::make_shared<Map>("../map.txt"))
+    r(std::make_shared<Role>(250,250)),
+    m(std::make_shared<Map>("C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/map.txt"))
 {
     r->setGeometry(250,250,100,100);
     r->show();
@@ -18,34 +16,43 @@ std::shared_ptr<Map> dataModel::get_map() throw()
 }
 bool dataModel::move(int i,int j)
 {
+    qDebug()<<"modelmove";
+    qDebug()<<i<<j;
     double di=sqrt(i*i+j*j);
     if((i!=0||j!=0)&&coli(i,j)==false)
     {
         if(i<0)
         {
+            qDebug()<<"leftmove";
             Fire_OnPropertyChanged("leftmove");
             r->setdirection(1);
         }
         else if(i>0)
         {
+            qDebug()<<"rightmove";
             Fire_OnPropertyChanged("rightmove");
             r->setdirection(2);
         }
         else if(j<0)
         {
-            Fire_OnPropertyChanged("downmove");
-            r->setdirection(3);
-        }
-        else
-        {
+            qDebug()<<"upmove";
             Fire_OnPropertyChanged("upmove");
             r->setdirection(4);
         }
+        else
+        {
+            qDebug()<<"downmove";
+            Fire_OnPropertyChanged("downmove");
+            r->setdirection(3);
+        }
+        qDebug()<<r->getRowId()<<r->getColId();
         int x=r->getRowId();
         int y=r->getColId();
-        int *x1,*y1;
-        *x1=x+(int)(i*r->getspeed()/di);
-        *y1=y+(int)(j*r->getspeed()/di);
+        int x1,y1;
+        qDebug()<<r->getspeed();
+        x1=x+(int)((double)i*(double)(r->getspeed())/di);
+        y1=y+(int)((double)j*(double)(r->getspeed())/di);
+        qDebug()<<x<<y;
         r->setRow(x1);
         r->setCol(y1);
         return true;

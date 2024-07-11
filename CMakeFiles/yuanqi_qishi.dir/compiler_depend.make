@@ -1462,6 +1462,7 @@ CMakeFiles/yuanqi_qishi.dir/src/model/model.cpp.obj: src/model/model.cpp \
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/vadefs.h \
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/wchar.h \
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/wctype.h \
+  E:/qqt/5.15.2/mingw81_64/include/QtCore/QDebug \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QObject \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QRandomGenerator \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QString \
@@ -2563,6 +2564,7 @@ CMakeFiles/yuanqi_qishi.dir/src/viewmodel/commands/move.cpp.obj: src/viewmodel/c
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/vadefs.h \
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/wchar.h \
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/wctype.h \
+  E:/qqt/5.15.2/mingw81_64/include/QtCore/QDebug \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QObject \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QRandomGenerator \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QString \
@@ -2926,6 +2928,7 @@ CMakeFiles/yuanqi_qishi.dir/src/viewmodel/sink/viewmodelsink.cpp.obj: src/viewmo
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/vadefs.h \
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/wchar.h \
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/wctype.h \
+  E:/qqt/5.15.2/mingw81_64/include/QtCore/QDebug \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QObject \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QRandomGenerator \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QString \
@@ -3288,6 +3291,7 @@ CMakeFiles/yuanqi_qishi.dir/src/viewmodel/viewmodel.cpp.obj: src/viewmodel/viewm
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/vadefs.h \
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/wchar.h \
   D:/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include/wctype.h \
+  E:/qqt/5.15.2/mingw81_64/include/QtCore/QDebug \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QObject \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QRandomGenerator \
   E:/qqt/5.15.2/mingw81_64/include/QtCore/QString \

@@ -50,6 +50,7 @@ private:
     std::shared_ptr<ICommandBase> cmd_move;
     std::shared_ptr<MainWindowSink> m_sink;
     QTimer *runtime;
+    QPixmap tmp;
 };
 
 #endif // MAINWINDOW_H
