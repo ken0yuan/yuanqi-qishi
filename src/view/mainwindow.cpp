@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     runtime=new QTimer(this);
     runtime->start(1000);
     connect(runtime,SIGNAL(timeout()),this,SLOT(update()));
-    qDebug() << "finish connect";
+    //qDebug() << "finish connect";
     //ui->backgroundLabel->setPixmap(QPixmap(":/images/background.png"));
     //ui->backgroundLabel->setScaledContents(true);
     //ui->backgroundLabel->lower();
@@ -31,12 +31,12 @@ MainWindow::~MainWindow()
 }
 void MainWindow::set_move_command(std::shared_ptr<ICommandBase> move_command)
 {
-    qDebug()<<"set_move_command";
+    //qDebug()<<"set_move_command";
     cmd_move = move_command;
 };
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-    qDebug()<<"keyPressEvent";
+    //qDebug()<<"keyPressEvent";
     if (event->key() == Qt::Key_W||event->key() == Qt::Key_A||event->key() == Qt::Key_S||event->key() == Qt::Key_D)
     {
         std::any param2 (std::make_any<MoveParameter>());
@@ -65,17 +65,17 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 };
 void MainWindow::init()
 {
-    qDebug()<<"init";
+    //qDebug()<<"init";
     resize(800, 600);
 };
 std::shared_ptr<IPropertyNotification> MainWindow::get_property_sink() throw()
 {
-    qDebug()<<"get_property_sink";
+    //qDebug()<<"get_property_sink";
     return std::static_pointer_cast<IPropertyNotification>(m_sink);
 };
 void MainWindow::paintEvent(QPaintEvent *event)
 {
-    qDebug()<<"paintEvent";
+    //qDebug()<<"paintEvent";
     QPainter painter(this);
     paint_my_window=&painter;
     QPixmap upImage(":/new/prefix1/images/r1.png");
@@ -118,11 +118,11 @@ void MainWindow::paintEvent(QPaintEvent *event)
 };
 void MainWindow::set_role(const std::shared_ptr<Role> r)
 {
-    qDebug()<<"set_role";
+    //qDebug()<<"set_role";
     this->R=r;
 }
 void MainWindow::set_map(const std::shared_ptr<Map> m)
 {
-    qDebug()<<"set_map";
+    //qDebug()<<"set_map";
     this->M=m;
 }

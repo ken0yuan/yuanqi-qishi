@@ -60,7 +60,8 @@ public:
     {
         for(auto iter = map.begin(); iter != map.end(); iter++)
         {
-            if(iter->getRowId() == row && iter->getColId() == col&&iter->getType()=="rock")
+            if(iter->getRowId()*50 <= row && iter->getRowId()*50+50>=row
+            && iter->getColId()*50 <= col&& iter->getColId()*50+50>=row && iter->getType()=="rock")
             {
                 return true;
             }
