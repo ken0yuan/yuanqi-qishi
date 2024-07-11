@@ -17,7 +17,7 @@ public:
         this->speed=5;
         this->radius=20;
         moveTimer = new QTimer(this);  
-        connect(moveTimer, &QTimer::timeout, &Role::handleMovement);  
+        //connect(moveTimer, &QTimer::timeout, &Role::handleMovement);  
         // 设置定时器间隔  
         int timerInterval = 50; // 50 毫秒  
         moveTimer->setInterval(timerInterval);

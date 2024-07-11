@@ -21,9 +21,9 @@ public:
         startTimer = new QTimer(this);
         moveTimer = new QTimer(this);
         stopTimer = new QTimer(this);
-        connect(startTimer, &QTimer::timeout, &Enemy::startMoving);
-        connect(moveTimer, &QTimer::timeout, &Enemy::move);
-        connect(stopTimer, &QTimer::timeout, &Enemy::stopMoving);
+        //connect(startTimer, &QTimer::timeout, &Enemy::startMoving);
+        //connect(moveTimer, &QTimer::timeout, &Enemy::move);
+        //connect(stopTimer, &QTimer::timeout, &Enemy::stopMoving);
         startTimer->start(2000);
     };
     int getRowId() const {return row_id;};

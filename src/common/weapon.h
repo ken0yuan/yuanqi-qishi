@@ -6,10 +6,10 @@
 #define WEAPON_HEIGHT 50
 class Weapon {
 public:
-    Weapon(Role *role, std::string type)
+    Weapon(int *row,int *col, std::string type)
     {
-        this->row_id = role->row_id;
-        this->col_id = role->col_id;
+        this->row_id = row;
+        this->col_id = col;
         if(type == "sword"||type == "pistol" ||type == "rifle")
             this->type = type;
         if (type == "sword")this->consume = 0;

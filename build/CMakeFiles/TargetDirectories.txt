@@ -1,5 +1,0 @@
-C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/LANGUAGES.dir
-C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/edit_cache.dir
-C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/rebuild_cache.dir
-C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir
-C:/Users/周俊/Desktop/c++/yuanqi_qishi/build/CMakeFiles/LANGUAGES_autogen.dir

@@ -16,7 +16,7 @@ bool App::Init(MainWindow& w)
     // commands
     w.set_move_command(m_ViewModel->get_move_command());
     // notifications
-    m_ViewModel->AddPropertyNotification(w.get_propertty_sink());
+    m_ViewModel->AddPropertyNotification(w.get_property_sink());
     w.setWindowTitle("Mine Sweeping");
     w.init();
     w.show();

@@ -8,7 +8,7 @@
 class Bullet :public QObject{
     Q_OBJECT
 public:
-    Bullet::Bullet(int row, int col,int height, int width, std::string type, double dir,QObject* parent = nullptr)
+    Bullet(int row, int col,int height, int width, std::string type, double dir,QObject* parent = nullptr)
     :row_id(row),col_id(col),height(height),width(width),type(type),dir(dir),QObject(parent)
     {
         this->row_id = row;
@@ -21,7 +21,7 @@ public:
         this->width=width;
         this->speed=0.5;
         timer = new QTimer(this);  
-        QObject::connect(timer, &QTimer::timeout, &Bullet::move); 
+        //QObject::connect(timer, &QTimer::timeout, &Bullet::move); 
         timer->start(100);
     };
     int getRowId() const {return row_id;};

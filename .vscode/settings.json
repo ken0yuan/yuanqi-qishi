@@ -57,7 +57,8 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "qapplication": "cpp"
+        "qapplication": "cpp",
+        "qpushbutton": "cpp"
     },
     "cmake.generator": "MinGW Makefiles"
 }

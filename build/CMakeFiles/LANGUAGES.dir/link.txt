@@ -1,3 +1,0 @@
-E:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\LANGUAGES.dir/objects.a
-C:\TDM-GCC-64\bin\ar.exe qc CMakeFiles\LANGUAGES.dir/objects.a @CMakeFiles\LANGUAGES.dir\objects1.rsp
-C:\TDM-GCC-64\bin\c++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\LANGUAGES.dir/objects.a -Wl,--no-whole-archive -o LANGUAGES.exe -Wl,--out-implib,libLANGUAGES.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\LANGUAGES.dir\linkLibs.rsp
