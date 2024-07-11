@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "yuanqi_qishi.exe"
+			"path" : "LANGUAGES.exe"
 		},
 		{
-			"path" : "yuanqi_qishi.pdb"
+			"path" : "LANGUAGES.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -293,7 +293,7 @@
 				},
 				{
 					"backtrace" : 0,
-					"path" : "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/yuanqi_qishi_autogen/include"
+					"path" : "C:/Users/\u5468\u4fca/Desktop/c++/yuanqi_qishi/build/LANGUAGES_autogen/include"
 				},
 				{
 					"backtrace" : 2,
@@ -341,14 +341,14 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "yuanqi_qishi_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"id" : "LANGUAGES_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,
-			"id" : "yuanqi_qishi_autogen::@6890427a1f51a3e7e1df"
+			"id" : "LANGUAGES_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "yuanqi_qishi::@6890427a1f51a3e7e1df",
+	"id" : "LANGUAGES::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -428,8 +428,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "yuanqi_qishi",
-	"nameOnDisk" : "yuanqi_qishi.exe",
+	"name" : "LANGUAGES",
+	"nameOnDisk" : "LANGUAGES.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -467,7 +467,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/yuanqi_qishi_autogen/mocs_compilation.cpp",
+			"path" : "build/LANGUAGES_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -485,13 +485,13 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/yuanqi_qishi_autogen/timestamp",
+			"path" : "build/LANGUAGES_autogen/timestamp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/yuanqi_qishi_autogen/timestamp.rule",
+			"path" : "build/LANGUAGES_autogen/timestamp.rule",
 			"sourceGroupIndex" : 2
 		}
 	],

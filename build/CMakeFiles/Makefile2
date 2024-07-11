@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = C:\Users\周俊\Desktop\c++\yuanqi_qishi\build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/yuanqi_qishi.dir/all
+all: CMakeFiles/LANGUAGES.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -70,89 +70,89 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/yuanqi_qishi.dir/clean
-clean: CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/clean
-clean: CMakeFiles/yuanqi_qishi_autogen.dir/clean
+clean: CMakeFiles/LANGUAGES.dir/clean
+clean: CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/clean
+clean: CMakeFiles/LANGUAGES_autogen.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/yuanqi_qishi.dir
+# Target rules for target CMakeFiles/LANGUAGES.dir
 
 # All Build rule for target.
-CMakeFiles/yuanqi_qishi.dir/all: CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/all
-CMakeFiles/yuanqi_qishi.dir/all: CMakeFiles/yuanqi_qishi_autogen.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target yuanqi_qishi"
-.PHONY : CMakeFiles/yuanqi_qishi.dir/all
+CMakeFiles/LANGUAGES.dir/all: CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/all
+CMakeFiles/LANGUAGES.dir/all: CMakeFiles/LANGUAGES_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target LANGUAGES"
+.PHONY : CMakeFiles/LANGUAGES.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/yuanqi_qishi.dir/rule: cmake_check_build_system
+CMakeFiles/LANGUAGES.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/yuanqi_qishi.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/LANGUAGES.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles 0
-.PHONY : CMakeFiles/yuanqi_qishi.dir/rule
+.PHONY : CMakeFiles/LANGUAGES.dir/rule
 
 # Convenience name for target.
-yuanqi_qishi: CMakeFiles/yuanqi_qishi.dir/rule
-.PHONY : yuanqi_qishi
+LANGUAGES: CMakeFiles/LANGUAGES.dir/rule
+.PHONY : LANGUAGES
 
 # clean rule for target.
-CMakeFiles/yuanqi_qishi.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/clean
-.PHONY : CMakeFiles/yuanqi_qishi.dir/clean
+CMakeFiles/LANGUAGES.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/clean
+.PHONY : CMakeFiles/LANGUAGES.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir
+# Target rules for target CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir
 
 # All Build rule for target.
-CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi_autogen_timestamp_deps.dir\build.make CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi_autogen_timestamp_deps.dir\build.make CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles --progress-num= "Built target yuanqi_qishi_autogen_timestamp_deps"
-.PHONY : CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/all
+CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES_autogen_timestamp_deps.dir\build.make CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES_autogen_timestamp_deps.dir\build.make CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles --progress-num= "Built target LANGUAGES_autogen_timestamp_deps"
+.PHONY : CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles 0
-.PHONY : CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/rule
+.PHONY : CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/rule
 
 # Convenience name for target.
-yuanqi_qishi_autogen_timestamp_deps: CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/rule
-.PHONY : yuanqi_qishi_autogen_timestamp_deps
+LANGUAGES_autogen_timestamp_deps: CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/rule
+.PHONY : LANGUAGES_autogen_timestamp_deps
 
 # clean rule for target.
-CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi_autogen_timestamp_deps.dir\build.make CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/clean
-.PHONY : CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/clean
+CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES_autogen_timestamp_deps.dir\build.make CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/clean
+.PHONY : CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/yuanqi_qishi_autogen.dir
+# Target rules for target CMakeFiles/LANGUAGES_autogen.dir
 
 # All Build rule for target.
-CMakeFiles/yuanqi_qishi_autogen.dir/all: CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi_autogen.dir\build.make CMakeFiles/yuanqi_qishi_autogen.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi_autogen.dir\build.make CMakeFiles/yuanqi_qishi_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles --progress-num=6 "Built target yuanqi_qishi_autogen"
-.PHONY : CMakeFiles/yuanqi_qishi_autogen.dir/all
+CMakeFiles/LANGUAGES_autogen.dir/all: CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES_autogen.dir\build.make CMakeFiles/LANGUAGES_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES_autogen.dir\build.make CMakeFiles/LANGUAGES_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles --progress-num=6 "Built target LANGUAGES_autogen"
+.PHONY : CMakeFiles/LANGUAGES_autogen.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/yuanqi_qishi_autogen.dir/rule: cmake_check_build_system
+CMakeFiles/LANGUAGES_autogen.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles 1
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/yuanqi_qishi_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/LANGUAGES_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\周俊\Desktop\c++\yuanqi_qishi\build\CMakeFiles 0
-.PHONY : CMakeFiles/yuanqi_qishi_autogen.dir/rule
+.PHONY : CMakeFiles/LANGUAGES_autogen.dir/rule
 
 # Convenience name for target.
-yuanqi_qishi_autogen: CMakeFiles/yuanqi_qishi_autogen.dir/rule
-.PHONY : yuanqi_qishi_autogen
+LANGUAGES_autogen: CMakeFiles/LANGUAGES_autogen.dir/rule
+.PHONY : LANGUAGES_autogen
 
 # clean rule for target.
-CMakeFiles/yuanqi_qishi_autogen.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi_autogen.dir\build.make CMakeFiles/yuanqi_qishi_autogen.dir/clean
-.PHONY : CMakeFiles/yuanqi_qishi_autogen.dir/clean
+CMakeFiles/LANGUAGES_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES_autogen.dir\build.make CMakeFiles/LANGUAGES_autogen.dir/clean
+.PHONY : CMakeFiles/LANGUAGES_autogen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

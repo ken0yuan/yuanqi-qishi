@@ -116,50 +116,74 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named yuanqi_qishi
+# Target rules for targets named LANGUAGES
 
 # Build rule for target.
-yuanqi_qishi: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 yuanqi_qishi
-.PHONY : yuanqi_qishi
+LANGUAGES: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 LANGUAGES
+.PHONY : LANGUAGES
 
 # fast build rule for target.
-yuanqi_qishi/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/build
-.PHONY : yuanqi_qishi/fast
+LANGUAGES/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/build
+.PHONY : LANGUAGES/fast
 
 #=============================================================================
-# Target rules for targets named yuanqi_qishi_autogen_timestamp_deps
+# Target rules for targets named LANGUAGES_autogen_timestamp_deps
 
 # Build rule for target.
-yuanqi_qishi_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 yuanqi_qishi_autogen_timestamp_deps
-.PHONY : yuanqi_qishi_autogen_timestamp_deps
+LANGUAGES_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 LANGUAGES_autogen_timestamp_deps
+.PHONY : LANGUAGES_autogen_timestamp_deps
 
 # fast build rule for target.
-yuanqi_qishi_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi_autogen_timestamp_deps.dir\build.make CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/build
-.PHONY : yuanqi_qishi_autogen_timestamp_deps/fast
+LANGUAGES_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES_autogen_timestamp_deps.dir\build.make CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/build
+.PHONY : LANGUAGES_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named yuanqi_qishi_autogen
+# Target rules for targets named LANGUAGES_autogen
 
 # Build rule for target.
-yuanqi_qishi_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 yuanqi_qishi_autogen
-.PHONY : yuanqi_qishi_autogen
+LANGUAGES_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 LANGUAGES_autogen
+.PHONY : LANGUAGES_autogen
 
 # fast build rule for target.
-yuanqi_qishi_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi_autogen.dir\build.make CMakeFiles/yuanqi_qishi_autogen.dir/build
-.PHONY : yuanqi_qishi_autogen/fast
+LANGUAGES_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES_autogen.dir\build.make CMakeFiles/LANGUAGES_autogen.dir/build
+.PHONY : LANGUAGES_autogen/fast
+
+LANGUAGES_autogen/mocs_compilation.obj: LANGUAGES_autogen/mocs_compilation.cpp.obj
+.PHONY : LANGUAGES_autogen/mocs_compilation.obj
+
+# target to build an object file
+LANGUAGES_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/LANGUAGES_autogen/mocs_compilation.cpp.obj
+.PHONY : LANGUAGES_autogen/mocs_compilation.cpp.obj
+
+LANGUAGES_autogen/mocs_compilation.i: LANGUAGES_autogen/mocs_compilation.cpp.i
+.PHONY : LANGUAGES_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+LANGUAGES_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/LANGUAGES_autogen/mocs_compilation.cpp.i
+.PHONY : LANGUAGES_autogen/mocs_compilation.cpp.i
+
+LANGUAGES_autogen/mocs_compilation.s: LANGUAGES_autogen/mocs_compilation.cpp.s
+.PHONY : LANGUAGES_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+LANGUAGES_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/LANGUAGES_autogen/mocs_compilation.cpp.s
+.PHONY : LANGUAGES_autogen/mocs_compilation.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -167,7 +191,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -175,7 +199,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/yuanqi_qishi.obj: src/yuanqi_qishi.cpp.obj
@@ -183,7 +207,7 @@ src/yuanqi_qishi.obj: src/yuanqi_qishi.cpp.obj
 
 # target to build an object file
 src/yuanqi_qishi.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/src/yuanqi_qishi.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/src/yuanqi_qishi.cpp.obj
 .PHONY : src/yuanqi_qishi.cpp.obj
 
 src/yuanqi_qishi.i: src/yuanqi_qishi.cpp.i
@@ -191,7 +215,7 @@ src/yuanqi_qishi.i: src/yuanqi_qishi.cpp.i
 
 # target to preprocess a source file
 src/yuanqi_qishi.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/src/yuanqi_qishi.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/src/yuanqi_qishi.cpp.i
 .PHONY : src/yuanqi_qishi.cpp.i
 
 src/yuanqi_qishi.s: src/yuanqi_qishi.cpp.s
@@ -199,32 +223,8 @@ src/yuanqi_qishi.s: src/yuanqi_qishi.cpp.s
 
 # target to generate assembly for a file
 src/yuanqi_qishi.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/src/yuanqi_qishi.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LANGUAGES.dir\build.make CMakeFiles/LANGUAGES.dir/src/yuanqi_qishi.cpp.s
 .PHONY : src/yuanqi_qishi.cpp.s
-
-yuanqi_qishi_autogen/mocs_compilation.obj: yuanqi_qishi_autogen/mocs_compilation.cpp.obj
-.PHONY : yuanqi_qishi_autogen/mocs_compilation.obj
-
-# target to build an object file
-yuanqi_qishi_autogen/mocs_compilation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/yuanqi_qishi_autogen/mocs_compilation.cpp.obj
-.PHONY : yuanqi_qishi_autogen/mocs_compilation.cpp.obj
-
-yuanqi_qishi_autogen/mocs_compilation.i: yuanqi_qishi_autogen/mocs_compilation.cpp.i
-.PHONY : yuanqi_qishi_autogen/mocs_compilation.i
-
-# target to preprocess a source file
-yuanqi_qishi_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/yuanqi_qishi_autogen/mocs_compilation.cpp.i
-.PHONY : yuanqi_qishi_autogen/mocs_compilation.cpp.i
-
-yuanqi_qishi_autogen/mocs_compilation.s: yuanqi_qishi_autogen/mocs_compilation.cpp.s
-.PHONY : yuanqi_qishi_autogen/mocs_compilation.s
-
-# target to generate assembly for a file
-yuanqi_qishi_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\yuanqi_qishi.dir\build.make CMakeFiles/yuanqi_qishi.dir/yuanqi_qishi_autogen/mocs_compilation.cpp.s
-.PHONY : yuanqi_qishi_autogen/mocs_compilation.cpp.s
 
 # Help Target
 help:
@@ -234,18 +234,18 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... yuanqi_qishi_autogen
-	@echo ... yuanqi_qishi_autogen_timestamp_deps
-	@echo ... yuanqi_qishi
+	@echo ... LANGUAGES_autogen
+	@echo ... LANGUAGES_autogen_timestamp_deps
+	@echo ... LANGUAGES
+	@echo ... LANGUAGES_autogen/mocs_compilation.obj
+	@echo ... LANGUAGES_autogen/mocs_compilation.i
+	@echo ... LANGUAGES_autogen/mocs_compilation.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
 	@echo ... src/yuanqi_qishi.obj
 	@echo ... src/yuanqi_qishi.i
 	@echo ... src/yuanqi_qishi.s
-	@echo ... yuanqi_qishi_autogen/mocs_compilation.obj
-	@echo ... yuanqi_qishi_autogen/mocs_compilation.i
-	@echo ... yuanqi_qishi_autogen/mocs_compilation.s
 .PHONY : help
 
 

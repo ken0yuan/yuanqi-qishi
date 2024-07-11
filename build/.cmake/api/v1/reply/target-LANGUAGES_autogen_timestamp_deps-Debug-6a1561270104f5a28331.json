@@ -14,9 +14,9 @@
 			}
 		]
 	},
-	"id" : "yuanqi_qishi_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+	"id" : "LANGUAGES_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
 	"isGeneratorProvided" : true,
-	"name" : "yuanqi_qishi_autogen_timestamp_deps",
+	"name" : "LANGUAGES_autogen_timestamp_deps",
 	"paths" : 
 	{
 		"build" : ".",

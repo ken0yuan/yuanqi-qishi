@@ -220,7 +220,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/yuanqi_qishi_autogen.dir/AutogenInfo.json"
+  "CMakeFiles/LANGUAGES_autogen.dir/AutogenInfo.json"
   ".qt/QtDeploySupport.cmake"
   ".qt/QtDeployTargets.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -228,7 +228,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/yuanqi_qishi.dir/DependInfo.cmake"
-  "CMakeFiles/yuanqi_qishi_autogen_timestamp_deps.dir/DependInfo.cmake"
-  "CMakeFiles/yuanqi_qishi_autogen.dir/DependInfo.cmake"
+  "CMakeFiles/LANGUAGES.dir/DependInfo.cmake"
+  "CMakeFiles/LANGUAGES_autogen_timestamp_deps.dir/DependInfo.cmake"
+  "CMakeFiles/LANGUAGES_autogen.dir/DependInfo.cmake"
   )
