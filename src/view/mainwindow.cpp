@@ -103,6 +103,7 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
             }
         }
         cmd_shot->SetParameter(param);
+        qDebug()<<dir.dir;
         cmd_shot->Exec();
     }
 }
