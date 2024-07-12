@@ -68,6 +68,10 @@ add_executable(yuanqi_qishi
             src/viewmodel/sink/viewmodelsink.h
             src/viewmodel/commands/move.cpp
             src/viewmodel/commands/move.h
+            src/viewmodel/commands/bulletMove.cpp
+            src/viewmodel/commands/bulletMove.h
+            src/viewmodel/commands/shot.cpp
+            src/viewmodel/commands/shot.h
             src/model/model.cpp
             src/model/model.h
             src/images.qrc

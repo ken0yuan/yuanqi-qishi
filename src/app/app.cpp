@@ -17,6 +17,7 @@ bool App::Init(MainWindow& w)
     w.set_map(m_ViewModel->get_map());
     // commands
     w.set_move_command(m_ViewModel->get_move_command());
+    w.set_shot_command(m_ViewModel->get_shot_command());
     // notifications
     m_ViewModel->AddPropertyNotification(w.get_property_sink());
     w.setWindowTitle("YUAN QI QI SHI");

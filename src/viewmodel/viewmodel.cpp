@@ -17,6 +17,14 @@ std::shared_ptr<ICommandBase> viewmodel::get_move_command() throw()
 {
     return std::static_pointer_cast<ICommandBase>(cmd_move);
 }
+std::shared_ptr<ICommandBase> viewmodel::get_bulletMove_command() throw()
+{
+    return std::static_pointer_cast<ICommandBase>(cmd_bulletMove);
+}
+std::shared_ptr<ICommandBase> viewmodel::get_shot_command() throw()
+{
+    return std::static_pointer_cast<ICommandBase>(cmd_shot);
+}
 std::shared_ptr<Role> viewmodel::get_role()
 {
     return datamodel->get_role();
