@@ -40,15 +40,48 @@ bool dataModel::bulletMove(int i)
     int speed=(*b)[i]->getSpeed();
     int radius=(*b)[i]->getRadius();
     //qDebug()<<x<<y<<dir<<radius;
-    if (m->isRock(y/50,x/50)||m->isRock((y+radius*cos(dir))/50,(x+radius*sin(dir))/50))
+    if (m->isRock((y+radius)/50,(x+radius)/50)||
+    m->isRock((y+radius*cos(dir))/50,(x+radius*sin(dir))/50)||
+    m->isRock((y-radius)/50,(x+radius)/50)||
+    m->isRock((y-radius)/50,(x-radius)/50)||
+    m->isRock((y+radius)/50,(x-radius)/50))
     {
         (*b).erase((*b).begin()+i);
         Fire_OnPropertyChanged("bulletMove");
         return true;
     }
-    else if(m->isBox(y/50,x/50)||m->isBox((y+radius*sin(dir))/50,(x+radius*cos(dir))/50)){
+    else if(m->isBox((y+radius*cos(dir))/50,(x+radius*sin(dir))/50))
+    {
         (*b).erase((*b).begin()+i);
-        m->deleteBlock(x,y);
+        m->deleteBlock((y+radius*cos(dir))/50,(x+radius*sin(dir))/50);
+        Fire_OnPropertyChanged("bulletMove");
+        return true;
+    }
+    else if(m->isBox((y+radius)/50,(x+radius)/50))
+    {
+        (*b).erase((*b).begin()+i);
+        m->deleteBlock((y+radius)/50,(x+radius)/50);
+        Fire_OnPropertyChanged("bulletMove");
+        return true;
+    }
+    else if(m->isBox((y-radius)/50,(x+radius)/50))
+    {
+        (*b).erase((*b).begin()+i);
+        m->deleteBlock((y-radius)/50,(x+radius)/50);
+        Fire_OnPropertyChanged("bulletMove");
+        return true;
+    }
+    else if(m->isBox((y-radius)/50,(x-radius)/50))
+    {
+        (*b).erase((*b).begin()+i);
+        m->deleteBlock((y-radius)/50,(x-radius)/50);
+        Fire_OnPropertyChanged("bulletMove");
+        return true;
+    }
+    else if(m->isBox((y+radius)/50,(x-radius)/50))
+    {
+        (*b).erase((*b).begin()+i);
+        m->deleteBlock((y+radius)/50,(x-radius)/50);
         Fire_OnPropertyChanged("bulletMove");
         return true;
     }
@@ -81,7 +114,8 @@ bool dataModel::bulletMove(Bullet* q)
                 (*b).erase((*b).begin()+i);
         }
         Fire_OnPropertyChanged("bulletMove");
-        m->deleteBlock(x,y);
+        m->deleteBlock(y/50,x/50);
+        m->deleteBlock((y+radius*sin(dir))/50,(x+radius*cos(dir))/50);
         return true;
     }
     else{}
@@ -148,19 +182,19 @@ bool dataModel::coli(int i,int j)
     int ra=r->getRadius();
     if((m->isBox((x-ra)/50,y/50)||m->isRock((x-ra)/50,y/50))&&i<0)
         return true;
-    if((m->isBox(x-ra,y+ra)||m->isRock((x-ra)/50,(y+ra)/50))&&(i<0||j>0))
+    if((m->isBox((x-ra)/50,(y+ra)/50)||m->isRock((x-ra)/50,(y+ra)/50))&&(i<0||j>0))
         return true;
-    if((m->isBox(x,y+ra)||m->isRock(x/50,(y+ra)/50))&&j>0)
+    if((m->isBox(x/50,(y+ra)/50)||m->isRock(x/50,(y+ra)/50))&&j>0)
         return true;
-    if((m->isBox(x+ra,y+ra)||m->isRock((x+ra)/50,(y+ra)/50))&&(i>0||j>0))
+    if((m->isBox((x+ra)/50,(y+ra)/50)||m->isRock((x+ra)/50,(y+ra)/50))&&(i>0||j>0))
         return true;
-    if((m->isBox(x+ra,y)||m->isRock((x+ra)/50,y/50))&&i>0)
+    if((m->isBox((x+ra)/50,y/50)||m->isRock((x+ra)/50,y/50))&&i>0)
         return true;
-    if((m->isBox(x+ra,y-ra)||m->isRock((x+ra)/50,(y-ra)/50))&&(i>0||j<0))
+    if((m->isBox((x+ra)/50,(y-ra)/50)||m->isRock((x+ra)/50,(y-ra)/50))&&(i>0||j<0))
         return true;
-    if((m->isBox(x,y-ra)||m->isRock(x/50,(y-ra)/50))&&j<0)
+    if((m->isBox(x/50,(y-ra)/50)||m->isRock(x/50,(y-ra)/50))&&j<0)
         return true;
-    if((m->isBox(x-ra,y-ra)||m->isRock((x-ra)/50,(y-ra)/50))&&(i<0||j<0))
+    if((m->isBox((x-ra)/50,(y-ra)/50)||m->isRock((x-ra)/50,(y-ra)/50))&&(i<0||j<0))
         return true;
     qDebug()<<"not coli";
     return false;

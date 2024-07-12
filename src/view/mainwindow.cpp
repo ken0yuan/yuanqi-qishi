@@ -148,6 +148,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPixmap rockImage(":/new/prefix1/images/rock.png");
     QPixmap grassImage(":/new/prefix1/images/grass.png");
     QPixmap bulletImage(":/new/prefix1/images/bullet.png");
+    QPixmap boxImage(":/new/prefix1/images/box.png");
     QPixmap a=leftImage;
     QPixmap b=rightImage;
     //painter.drawPixmap(400,300,100,100,QPixmap(":/new/prefix1/images/l3.png"));
@@ -159,6 +160,8 @@ void MainWindow::paintEvent(QPaintEvent *event)
         {
             if(M->isRock(i/50,j/50))
                 painter.drawPixmap(i,j,50,50,rockImage);
+            else if(M->isBox(i/50,j/50))
+                painter.drawPixmap(i,j,50,50,boxImage);
             else 
                 painter.drawPixmap(i,j,50,50,grassImage);
         }

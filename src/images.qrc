@@ -6,5 +6,6 @@
         <file>images/rock.png</file>
         <file>images/grass.png</file>
         <file>images/bullet.png</file>
+        <file>images/box.png</file>
     </qresource>
 </RCC>

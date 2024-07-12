@@ -51,9 +51,7 @@ public:
     {
         for(auto iter = map.begin(); iter != map.end(); iter++)
         {
-            int a = iter->getRowId();
-            int b = iter->getColId();
-            if(row >= a && row <= a+50 && col >= b && col <= b+50)
+            if(iter->getRowId() == row && iter->getColId() == col)
             {
                 map.erase(iter);
                 return;
