@@ -143,4 +143,67 @@ public:
     int y;
     int x;
 };
+class ShotParameter{
+public:
+    ShotParameter() throw(){};
+    ShotParameter(const ShotParameter& src):dir(src.dir){};
+    ShotParameter(ShotParameter&& src)
+    {
+        dir = static_cast<int&&>(src.dir);
+    };
+    ShotParameter(double a)
+    {
+        dir = a;
+    };
+    ShotParameter& operator=(const ShotParameter& src)
+    {
+        if (this!=&src)
+        {
+            dir = src.dir;
+        }
+        return *this;
+    };
+    ShotParameter& operator=(ShotParameter&& src)
+    {
+        if (this!=&src)
+        {
+            dir = src.dir;
+        }
+        return *this;
+    };
+public:
+    double dir;
+};
+
+class BulletMoveParameter{
+public:
+    BulletMoveParameter() throw(){};
+    BulletMoveParameter(const BulletMoveParameter& src):i(src.i){};
+    BulletMoveParameter(BulletMoveParameter&& src)
+    {
+        i = static_cast<int&&>(src.i);
+    };
+    BulletMoveParameter(int a)
+    {
+        i = a;
+    };
+    BulletMoveParameter& operator=(const BulletMoveParameter& src)
+    {
+        if (this!=&src)
+        {
+            i = src.i;
+        }
+        return *this;
+    };
+    BulletMoveParameter& operator=(BulletMoveParameter&& src)
+    {
+        if (this!=&src)
+        {
+            i = src.i;
+        }
+        return *this;
+    };
+public:
+    int i;
+};
 #endif

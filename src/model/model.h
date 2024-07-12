@@ -19,10 +19,16 @@ public:
     std::shared_ptr<Role> get_role() throw();
     std::shared_ptr<Map> get_map() throw();
     bool move(int i,int j);
+    bool shot(double dir);
+    bool bulletMove(int i);
+    bool bulletMove(Bullet* q);
+    bool enemyMove(double dir,int i);
     bool coli(int i,int j);
 private:
     std::shared_ptr<Role> r;
     std::shared_ptr<Map> m;
+    std::vector<std::shared_ptr<Enemy>> e;
+    std::vector<std::shared_ptr<Bullet>> b;
 };
 
 #endif // MODEL_H

@@ -1,7 +1,14 @@
 #include "model.h"
 dataModel::dataModel():
+<<<<<<< HEAD
     r(std::make_shared<Role>(1250,750)),
     m(std::make_shared<Map>("E:/c++/yuanqi_qishi/src/map.txt"))
+=======
+    r(std::make_shared<Role>(750,750)),
+    m(std::make_shared<Map>("C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/map.txt")),
+    e(),
+    b()
+>>>>>>> aa426403ccccd7e01a09cdcc98626ae7e405979b
 {
     qDebug()<<m->isRock(1,1);
     qDebug()<<m->isRock(50,52);
@@ -14,6 +21,65 @@ std::shared_ptr<Role> dataModel::get_role() throw()
 std::shared_ptr<Map> dataModel::get_map() throw()
 {
     return m;
+}
+bool dataModel::shot(double dir)
+{
+    b.push_back(std::make_shared<Bullet>(r->getRowId(),r->getColId(), 5, "mine", dir));
+    Fire_OnPropertyChanged("bulletMove");
+}
+bool dataModel::bulletMove(int i)
+{
+    int x=b[i]->getColId();
+    int y=b[i]->getRowId();
+    double dir=b[i]->getDir();
+    int radius=b[i]->getRadius();
+    if (m->isRock(x/50,y/50)||m->isRock((x+radius*cos(dir))/50,(y+radius*sin(dir))/50))
+    {
+        b.erase(b.begin()+i);
+        Fire_OnPropertyChanged("bullet");
+        return true;
+    }
+    else if(m->isBox(x/50,y/50)||m->isBox((x+radius*cos(dir))/50,(y+radius*sin(dir))/50)){
+        b.erase(b.begin()+i);
+        m->deleteBlock(x,y);
+        return true;
+    }
+    else{}
+    b[i]->setCol(x+radius*cos(dir));
+    b[i]->setRow(y+radius*sin(dir));
+    Fire_OnPropertyChanged("bulletMove");
+}
+bool dataModel::bulletMove(Bullet* q)
+{
+    int x=q->getColId();
+    int y=q->getRowId();
+    double dir=q->getDir();
+    int radius=q->getRadius();
+    if (m->isRock(x/50,y/50)||m->isRock((x+radius*cos(dir))/50,(y+radius*sin(dir))/50))
+    {
+        for (int i=0;i<b.size();i++)
+        {
+            if(b[i]->getColId()==x&&b[i]->getRowId()==y)
+                b.erase(b.begin()+i);
+        }
+        return true;
+    }
+    else if(m->isBox(x/50,y/50)||m->isBox((x+radius*cos(dir))/50,(y+radius*sin(dir))/50)){
+        for (int i=0;i<b.size();i++)
+        {
+            if(b[i]->getColId()==x&&b[i]->getRowId()==y)
+                b.erase(b.begin()+i);
+        }
+        m->deleteBlock(x,y);
+        return true;
+    }
+    else{}
+    q->setCol(x+radius*cos(dir));
+    q->setRow(y+radius*sin(dir));
+    Fire_OnPropertyChanged("bulletMove");
+}
+bool dataModel::enemyMove(double dir,int i)
+{
 }
 bool dataModel::move(int i,int j)
 {

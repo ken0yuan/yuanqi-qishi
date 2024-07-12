@@ -31,3 +31,19 @@ bool viewmodel::move(int i,int j)
     qDebug()<<i<<j;
     return datamodel->move(i,j);
 }
+bool viewmodel::bulletMove(int i)
+{
+    datamodel->bulletMove(i);
+}
+bool viewmodel::bulletMove(Bullet* q)
+{
+    datamodel->bulletMove(q);
+}
+bool viewmodel::enemyMove(double dir,int i)
+{
+    datamodel->enemyMove(dir,i);
+}
+bool viewmodel::shot(double dir)
+{
+    return datamodel->shot(dir);
+}

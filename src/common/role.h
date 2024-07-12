@@ -7,7 +7,7 @@
 #include <QWidget>
 #include <QKeyEvent>
 #include"weapon.h"
-class Role :public QWidget{
+class Role{
 friend class Weapon;
 public:
     Role(int row, int col)
@@ -17,11 +17,6 @@ public:
         this->speed=15;
         this->radius=70;
         this->direction=0;
-        moveTimer = new QTimer(this);  
-        //connect(moveTimer, &QTimer::timeout, &Role::handleMovement);  
-        // 设置定时器间隔  
-        int timerInterval = 50; // 50 毫秒  
-        moveTimer->setInterval(timerInterval);
     };
     int getRowId() const {return row_id;};
     int getColId() const {return col_id;};
@@ -59,33 +54,6 @@ public:
     {
     };//暂定不受伤害多少时间回盾，不回蓝条和血条
     void setRadius(int radius){this->radius = radius;};
-protected:  
-    void keyPressEvent(QKeyEvent *event) override {  
-        if (event->key() == Qt::Key_Left||event->key() == Qt::Key_Right||event->key() == Qt::Key_Up||event->key() == Qt::Key_Down){  
-            moveTimer->start();  
-        }
-    }
-    void keyReleaseEvent(QKeyEvent *event) override {  
-        if (event->key() == Qt::Key_Left||event->key() == Qt::Key_Right||event->key() == Qt::Key_Up||event->key() == Qt::Key_Down) {  
-            moveTimer->stop();  
-        }  
-    }  
-private slots:  
-    void handleMovement() {  
-        QMap<int, bool> keyState; // Declare and define keyState variable
-        if (keyState[Qt::Key_Left]) {  
-            row_id -= speed; // 向左移动  
-        }  
-        if (keyState[Qt::Key_Right]) {  
-            row_id += speed; // 向右移动  
-        }  
-        if (keyState[Qt::Key_Up]) {  
-            col_id += speed; // 向上移动  
-        }  
-        if (keyState[Qt::Key_Down]) {  
-            col_id -= speed; // 向下移动  
-        }
-    }  
 private:
     int row_id;
     int col_id;
@@ -95,6 +63,5 @@ private:
     int MP;//蓝条
     int speed;
     int direction;
-    QTimer* moveTimer;
 };
 #endif
