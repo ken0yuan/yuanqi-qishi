@@ -15,9 +15,12 @@ MainWindow::MainWindow(QWidget *parent)
     //connect(ui->m_move_command.get(), &ICommandBase::CanExecuteChanged, this, &MainWindow::on_can_execute_changed);
     // 设置背景图片
     runtime=new QTimer(this);
+    bulletmovetime=new QTimer(this);
     //paintflag=0;
     runtime->start(1000);
+    bulletmovetime->start(50);
     connect(runtime,SIGNAL(timeout()),this,SLOT(update()));
+    connect(bulletmovetime,SIGNAL(timeout()),this,SLOT(slotbulletmove));
     //qDebug() << "finish connect";
     //ui->backgroundLabel->setPixmap(QPixmap(":/images/background.png"));
     //ui->backgroundLabel->setScaledContents(true);
@@ -38,6 +41,21 @@ void MainWindow::set_move_command(std::shared_ptr<ICommandBase> move_command)
 void MainWindow::set_shot_command(std::shared_ptr<ICommandBase> shot_command)
 {
     cmd_shot = shot_command;
+}
+void MainWindow::set_bulletmove_command(std::shared_ptr<ICommandBase> bullet_command)
+{
+    cmd_bulletmove = bullet_command;
+}
+void MainWindow::slotbulletmove()
+{
+    for(int i=0;i<B.size();i++)
+    {
+        std::any param (std::make_any<BulletMoveParameter>());
+        BulletMoveParameter& j=std::any_cast<BulletMoveParameter&>(param);
+        j.i=i;
+        cmd_bulletmove->SetParameter(param);
+        cmd_bulletmove->Exec();
+    }
 }
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
@@ -128,6 +146,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPixmap rightImage(":/new/prefix1/images/r1.png");
     QPixmap rockImage(":/new/prefix1/images/rock.png");
     QPixmap grassImage(":/new/prefix1/images/grass.png");
+    QPixmap bulletImage(":/new/prefix1/images/bullet.png");
     QPixmap a=leftImage;
     QPixmap b=rightImage;
     //painter.drawPixmap(400,300,100,100,QPixmap(":/new/prefix1/images/l3.png"));
@@ -173,6 +192,10 @@ void MainWindow::paintEvent(QPaintEvent *event)
         painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     }
+    for(int i=0;i<B.size();i++)
+    {
+        painter.drawPixmap(B[i]->getRowId()-5,B[i]->getColId()-5,10,10,bulletImage);
+    }
 }
 void MainWindow::set_role(const std::shared_ptr<Role> r)
 {
@@ -183,4 +206,8 @@ void MainWindow::set_map(const std::shared_ptr<Map> m)
 {
     //qDebug()<<"set_map";
     this->M=m;
+}
+void MainWindow::set_bullet(const std::vector<std::shared_ptr<Bullet>> b)
+{
+    this->B=b;
 }

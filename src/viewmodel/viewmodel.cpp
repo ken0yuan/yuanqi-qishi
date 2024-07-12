@@ -35,6 +35,10 @@ std::shared_ptr<Map> viewmodel::get_map()
 {
     return datamodel->get_map();
 }
+std::vector<std::shared_ptr<Bullet>> viewmodel::get_bullet()
+{
+    return datamodel->get_bullet();
+}
 bool viewmodel::move(int i,int j)
 {
     qDebug()<<"viewmodelmove";

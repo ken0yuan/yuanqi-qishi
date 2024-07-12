@@ -1,7 +1,7 @@
 #include "model.h"
 dataModel::dataModel():
     r(std::make_shared<Role>(750,750)),
-    m(std::make_shared<Map>("C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/map.txt")),
+    m(std::make_shared<Map>("E:/c++/yuanqi_qishi/src/map.txt")),
     e(),
     b()
 {
@@ -17,10 +17,15 @@ std::shared_ptr<Map> dataModel::get_map() throw()
 {
     return m;
 }
+std::vector<std::shared_ptr<Bullet>> dataModel::get_bullet() throw()
+{
+    return b;
+}
 bool dataModel::shot(double dir)
 {
     b.push_back(std::make_shared<Bullet>(r->getRowId(),r->getColId(), 5, "mine", dir));
     Fire_OnPropertyChanged("bulletMove");
+    return true;
 }
 bool dataModel::bulletMove(int i)
 {
@@ -43,6 +48,7 @@ bool dataModel::bulletMove(int i)
     b[i]->setCol(x+radius*cos(dir));
     b[i]->setRow(y+radius*sin(dir));
     Fire_OnPropertyChanged("bulletMove");
+    return true;
 }
 bool dataModel::bulletMove(Bullet* q)
 {
@@ -72,9 +78,11 @@ bool dataModel::bulletMove(Bullet* q)
     q->setCol(x+radius*cos(dir));
     q->setRow(y+radius*sin(dir));
     Fire_OnPropertyChanged("bulletMove");
+    return true;
 }
 bool dataModel::enemyMove(double dir,int i)
 {
+    return true;
 }
 bool dataModel::move(int i,int j)
 {

@@ -24,4 +24,8 @@ void MainWindowSink::OnPropertyChanged(const std::string& str)
     {
         pmw->update();
     }
+    if(str=="bulletMove")
+    {
+        pmw->update();
+    }
 }

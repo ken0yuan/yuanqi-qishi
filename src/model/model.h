@@ -18,6 +18,7 @@ public:
     dataModel();
     std::shared_ptr<Role> get_role() throw();
     std::shared_ptr<Map> get_map() throw();
+    std::vector<std::shared_ptr<Bullet>> get_bullet() throw();
     bool move(int i,int j);
     bool shot(double dir);
     bool bulletMove(int i);
