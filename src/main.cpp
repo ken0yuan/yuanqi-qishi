@@ -1,5 +1,6 @@
 #include "app/app.h"
 #include "view/mainwindow.h"
+#include <QDebug>
 
 #include <QApplication>
 #undef main

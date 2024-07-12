@@ -18,9 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     bulletmovetime=new QTimer(this);
     //paintflag=0;
     runtime->start(1000);
-    bulletmovetime->start(50);
+    bulletmovetime->start(15);
     connect(runtime,SIGNAL(timeout()),this,SLOT(update()));
-    connect(bulletmovetime,SIGNAL(timeout()),this,SLOT(slotbulletmove));
+    connect(bulletmovetime,SIGNAL(timeout()),this,SLOT(slotbulletmove()));
     //qDebug() << "finish connect";
     //ui->backgroundLabel->setPixmap(QPixmap(":/images/background.png"));
     //ui->backgroundLabel->setScaledContents(true);
@@ -48,8 +48,9 @@ void MainWindow::set_bulletmove_command(std::shared_ptr<ICommandBase> bullet_com
 }
 void MainWindow::slotbulletmove()
 {
-    for(int i=0;i<B.size();i++)
+    for(int i=0;i<(*B).size();i++)
     {
+        //qDebug()<<"slotbulletmove";
         std::any param (std::make_any<BulletMoveParameter>());
         BulletMoveParameter& j=std::any_cast<BulletMoveParameter&>(param);
         j.i=i;
@@ -92,7 +93,7 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
     click_y=event->y();
     if(event->buttons()==(Qt::LeftButton))
     {
-        qDebug()<<"Shot";
+        //qDebug()<<"Shot";
         std::any param (std::make_any<ShotParameter>());
         ShotParameter& dir= std::any_cast<ShotParameter&>(param);
         if(click_x==R->getRowId())
@@ -121,7 +122,7 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
             }
         }
         cmd_shot->SetParameter(param);
-        qDebug()<<dir.dir;
+        //qDebug()<<dir.dir;
         cmd_shot->Exec();
     }
 }
@@ -165,36 +166,37 @@ void MainWindow::paintEvent(QPaintEvent *event)
     switch (R->getdirection())
     {
     case 1:
-        qDebug()<<"direction1";
-        qDebug()<<R->getRowId()<<R->getColId();
+        //qDebug()<<"direction1";
+        //qDebug()<<R->getRowId()<<R->getColId();
         tmp=leftImage;
         painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     case 2:
-        qDebug()<<"direction2";
-        qDebug()<<R->getRowId()<<R->getColId();
+        //qDebug()<<"direction2";
+        //qDebug()<<R->getRowId()<<R->getColId();
         tmp=rightImage;
         painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     case 3:
-        qDebug()<<"direction3";
-        qDebug()<<R->getRowId()<<R->getColId();
+        //qDebug()<<"direction3";
+        //qDebug()<<R->getRowId()<<R->getColId();
         painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     case 4:
-        qDebug()<<"direction4";
-        qDebug()<<R->getRowId()<<R->getColId();
+        //qDebug()<<"direction4";
+        //qDebug()<<R->getRowId()<<R->getColId();
         painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     case 0:
-        qDebug()<<"direction0";
-        qDebug()<<R->getRowId()<<R->getColId();
+        //qDebug()<<"direction0";
+        //qDebug()<<R->getRowId()<<R->getColId();
         painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     }
-    for(int i=0;i<B.size();i++)
+    for(int i=0;i<(*B).size();i++)
     {
-        painter.drawPixmap(B[i]->getRowId()-5,B[i]->getColId()-5,10,10,bulletImage);
+        int radius=(*B)[i]->getRadius();
+        painter.drawPixmap((*B)[i]->getRowId()-radius,(*B)[i]->getColId()-radius,radius*2,radius*2,bulletImage);
     }
 }
 void MainWindow::set_role(const std::shared_ptr<Role> r)
@@ -207,7 +209,7 @@ void MainWindow::set_map(const std::shared_ptr<Map> m)
     //qDebug()<<"set_map";
     this->M=m;
 }
-void MainWindow::set_bullet(const std::vector<std::shared_ptr<Bullet>> b)
+void MainWindow::set_bullet(const std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> b)
 {
     this->B=b;
 }

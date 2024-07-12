@@ -7,7 +7,7 @@ viewmodel::viewmodel():
 {}
 void viewmodel::set_model(const std::shared_ptr<dataModel>& model)
 {
-    qDebug()<<"set_model";
+    //qDebug()<<"set_model";
     datamodel=model;
     datamodel->AddPropertyNotification(std::static_pointer_cast<IPropertyNotification>(m_sink));
 }
@@ -35,32 +35,32 @@ std::shared_ptr<Map> viewmodel::get_map()
 {
     return datamodel->get_map();
 }
-std::vector<std::shared_ptr<Bullet>> viewmodel::get_bullet()
+std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> viewmodel::get_bullet()
 {
     return datamodel->get_bullet();
 }
 bool viewmodel::move(int i,int j)
 {
-    qDebug()<<"viewmodelmove";
-    qDebug()<<i<<j;
+    //qDebug()<<"viewmodelmove";
+    //qDebug()<<i<<j;
     return datamodel->move(i,j);
 }
 bool viewmodel::bulletMove(int i)
 {
-    qDebug()<<"viewmodelbulletMove";
-    datamodel->bulletMove(i);
+    //qDebug()<<"viewmodelbulletMove";
+    return datamodel->bulletMove(i);
 }
 bool viewmodel::bulletMove(Bullet* q)
 {
-    qDebug()<<"viewmodelbulletMove";
+    //qDebug()<<"viewmodelbulletMove";
     datamodel->bulletMove(q);
 }
 bool viewmodel::enemyMove(double dir,int i)
 {
-    datamodel->enemyMove(dir,i);
+    return datamodel->enemyMove(dir,i);
 }
 bool viewmodel::shot(double dir)
 {
-    qDebug()<<"viewmodelshot";
+    //qDebug()<<"viewmodelshot";
     return datamodel->shot(dir);
 }

@@ -40,7 +40,7 @@ public:
     void set_bulletmove_command(std::shared_ptr<ICommandBase> bullet_command);
     void set_role(const std::shared_ptr<Role> r);
     void set_map(const std::shared_ptr<Map> m);
-    void set_bullet(const std::vector<std::shared_ptr<Bullet>> b);
+    void set_bullet(const std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> b);
     void init();
     std::shared_ptr<IPropertyNotification> get_property_sink() throw();
 public slots:
@@ -53,7 +53,7 @@ private:
     Ui::MainWindow *ui;
     std::shared_ptr<Role> R;
     std::shared_ptr<Map> M;
-    std::vector<std::shared_ptr<Bullet>> B;
+    std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> B;
     std::shared_ptr<ICommandBase> cmd_shot;
     std::shared_ptr<ICommandBase> cmd_move;
     std::shared_ptr<ICommandBase> cmd_bulletmove;

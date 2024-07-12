@@ -5,12 +5,14 @@
 //#include <QObject>  
 //#include <QPainter>  
 //#include <QWidget>
+#include<QDebug>
 class Bullet{
     //Q_OBJECT
 public:
     Bullet(int row, int col,int radius ,std::string type, double dir)
     :row_id(row),col_id(col),radius(radius),type(type),dir(dir)
     {
+        //qDebug()<<"Bullet init";
         this->row_id = row;
         this->col_id = col;
         if(type == "enemy"||type == "mine")
@@ -18,7 +20,7 @@ public:
         this->hurt=1;
         this->dir=dir;
         this->radius=radius;
-        this->speed=0.5;
+        this->speed=15;
         //timer = new QTimer(this);  
         //QObject::connect(timer, &QTimer::timeout, &Bullet::move); 
         //timer->start(100);
@@ -28,7 +30,7 @@ public:
     int getRadius() const {return radius;};
     int getHurt() const {return hurt;};
     double getDir() const {return dir;};
-    double getSpeed() const {return speed;};
+    int getSpeed() const {return speed;};
     std::string getType() const{ return type;};
     void setRow(int row){this->row_id = row;};
     void setHurt(int hurt){this->hurt=hurt;};
@@ -50,7 +52,7 @@ private:
     int col_id;
     int radius;
     double dir;//采用弧度制，正右为0
-    double speed;
+    int speed;
     int hurt;//伤害值,暂定初始伤害为1
     std::string type;
     //QTimer *timer;

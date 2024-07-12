@@ -17,7 +17,7 @@ public:
     std::shared_ptr<ICommandBase> get_shot_command() throw();
     std::shared_ptr<Role> get_role();//获取model里的role属性
     std::shared_ptr<Map> get_map();//获取model里的map属性
-    std::vector<std::shared_ptr<Bullet>> get_bullet();
+    std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> get_bullet();
     bool move(int i,int j);//在view里面通过四个按键的状态决定i和j的值，向x正方向移动i为1，反方向为-1
                            //向y正方向移动j为1，反方向为-1。静止时两个都为0
     bool bulletMove(int i);
