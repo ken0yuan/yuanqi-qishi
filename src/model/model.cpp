@@ -6,8 +6,6 @@ dataModel::dataModel():
     qDebug()<<m->isRock(1,1);
     qDebug()<<m->isRock(50,52);
     qDebug()<<m->isRock(50,50);
-    r->setGeometry(250,250,100,100);
-    r->show();
 }
 std::shared_ptr<Role> dataModel::get_role() throw()
 {
