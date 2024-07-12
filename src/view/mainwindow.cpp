@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     //connect(ui->m_move_command.get(), &ICommandBase::CanExecuteChanged, this, &MainWindow::on_can_execute_changed);
     // 设置背景图片
     runtime=new QTimer(this);
-    paintflag=0;
+    //paintflag=0;
     runtime->start(1000);
     connect(runtime,SIGNAL(timeout()),this,SLOT(update()));
     //qDebug() << "finish connect";
@@ -90,7 +90,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
     //painter.drawPixmap(400,300,100,100,QPixmap(":/new/prefix1/images/l3.png"));
     //if(paintflag==0)
     //{
-    for(int i=0;i<=1500;i+=50)
+    for(int i=500;i<=2000;i+=50)
     {
         for(int j=0;j<=1500;j+=50)
         {
