@@ -7,5 +7,9 @@
         <file>images/grass.png</file>
         <file>images/bullet.png</file>
         <file>images/box.png</file>
+        <file>images/stateboard.png</file>
+        <file>images/red.png</file>
+        <file>images/blue.png</file>
+        <file>images/grey.png</file>
     </qresource>
 </RCC>

@@ -1,6 +1,7 @@
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
 #include <QKeyEvent>
+#include <QImage>
 #include <any>
 #define M_PI       3.14159265358979323846
 QPainter *paint_my_window;
@@ -201,6 +202,78 @@ void MainWindow::paintEvent(QPaintEvent *event)
         int radius=(*B)[i]->getRadius();
         painter.drawPixmap((*B)[i]->getRowId()-radius,(*B)[i]->getColId()-radius,radius*2,radius*2,bulletImage);
     }
+    /*
+    painter.setBrush(Qt::red);
+    painter.drawRect(0, 0, 200,50);
+    painter.setBrush(Qt::transparent);
+    painter.drawRect(200, 0,100,50);
+    */
+   /*
+      painter.setRenderHint(QPainter::Antialiasing, true); // 启用抗锯齿以获得更平滑的边缘
+
+        // 设置矩形的位置和大小
+        QRect rect(50, 50, 400, 300);
+        
+        // 设置圆角半径
+        int cornerRadius = 20;
+
+        // 设置填充颜色和边框颜色
+        QColor customColor = QColor::fromRgb(173, 216, 230); // 浅蓝色 (LightBlue)
+        painter.setBrush(customColor);
+        painter.setPen(Qt::black);
+
+        // 绘制带有圆角的矩形
+        painter.drawRoundedRect(rect, cornerRadius, cornerRadius);
+
+        painter.setBrush(Qt::red);
+        painter.drawRect(100, 100, 200,40);
+        painter.setBrush(Qt::transparent);
+        painter.drawRect(300, 100,100,40);
+
+        painter.setBrush(Qt::blue);
+        painter.drawRect(100, 160, 200,40);
+        painter.setBrush(Qt::transparent);
+        painter.drawRect(300, 160,100,40);
+
+
+        painter.setBrush(Qt::gray);
+        painter.drawRect(100, 220, 200,40);
+        painter.setBrush(Qt::transparent);
+        painter.drawRect(300, 220,100,40);
+   */
+    QImage stateboard(":/new/prefix1/images/stateboard.png");
+    QImage redbar(":/new/prefix1/images/red.png");
+    QImage bluebar(":/new/prefix1/images/blue.png");
+    QImage greybar(":/new/prefix1/images/grey.png");
+    QImage scaledImage = stateboard.scaled(400,800, Qt::KeepAspectRatio);
+    int nowHP,nowMP,nowSP;
+    nowHP = R->getHP();
+    nowMP = R->getMP();
+    nowSP = R->getSP();
+    QImage red = redbar.scaled(((double)nowHP/MAXHP)*290,36);
+    QImage blue = bluebar.scaled(((double)nowMP/MAXMP)*290,36);
+    QImage grey = greybar.scaled(((double)nowSP/MAXSP)*290,36);
+    painter.drawImage(50, 50, scaledImage);
+    painter.drawImage(132,72,red);
+    painter.drawImage(132,116,grey);
+    painter.drawImage(132,166,blue);
+
+    QFont font("Arial", 20); // 字体、大小
+    painter.setFont(font);
+    painter.setPen(Qt::white);
+
+    QString redstring = QString::number(nowHP);
+    QString bluestring = QString::number(nowMP);
+    QString greystring  = QString::number(nowSP);
+    redstring += "/5";
+    bluestring += "/500";
+    greystring += "/5";
+
+    painter.drawText(252,98,redstring);
+    painter.drawText(252,144,greystring);
+    painter.drawText(212,196,bluestring);
+
+
 }
 void MainWindow::set_role(const std::shared_ptr<Role> r)
 {
