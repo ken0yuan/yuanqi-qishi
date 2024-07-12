@@ -58,7 +58,12 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "qapplication": "cpp",
-        "qpushbutton": "cpp"
+        "qpushbutton": "cpp",
+        "codecvt": "cpp",
+        "source_location": "cpp",
+        "iomanip": "cpp",
+        "shared_mutex": "cpp",
+        "cinttypes": "cpp"
     },
     "cmake.generator": "MinGW Makefiles"
 }

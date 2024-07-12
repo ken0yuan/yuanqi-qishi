@@ -8,8 +8,8 @@
 class Bullet{
     //Q_OBJECT
 public:
-    Bullet(int row, int col,int height, int width, std::string type, double dir)
-    :row_id(row),col_id(col),height(height),width(width),type(type),dir(dir)
+    Bullet(int row, int col,int radius ,std::string type, double dir)
+    :row_id(row),col_id(col),radius(radius),type(type),dir(dir)
     {
         this->row_id = row;
         this->col_id = col;
@@ -17,8 +17,7 @@ public:
             this->type = type;
         this->hurt=1;
         this->dir=dir;
-        this->height=height;
-        this->width=width;
+        this->radius=radius;
         this->speed=0.5;
         //timer = new QTimer(this);  
         //QObject::connect(timer, &QTimer::timeout, &Bullet::move); 
@@ -26,8 +25,7 @@ public:
     };
     int getRowId() const {return row_id;};
     int getColId() const {return col_id;};
-    int getWidth() const {return width;};
-    int getHeight()const {return height;};
+    int getRadius() const {return radius;};
     int getHurt() const {return hurt;};
     double getDir() const {return dir;};
     double getSpeed() const {return speed;};
@@ -35,8 +33,7 @@ public:
     void setRow(int row){this->row_id = row;};
     void setHurt(int hurt){this->hurt=hurt;};
     void setCol(int col){this->col_id = col;};
-    void setWidth(int width){this->width = width;};
-    void setHeight(int height){this->height = height;};
+    void setRadius(int Radius){this->radius = Radius;};
     void setType(std::string type)
     {
         if(type == "enemy"||type == "mine")
@@ -51,8 +48,7 @@ public slots:
 private:
     int row_id;
     int col_id;
-    int width;
-    int height;
+    int radius;
     double dir;//采用弧度制，正右为0
     double speed;
     int hurt;//伤害值,暂定初始伤害为1

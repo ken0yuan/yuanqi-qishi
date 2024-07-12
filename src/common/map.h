@@ -34,11 +34,26 @@ public:
     std::vector<Block> getMap() const {return map;};
     void setMap(std::vector<Block> map){this->map = map;};
     void addBlock(Block block){this->map.push_back(block);};
+    Block getBlock(int row, int col)
+    {
+        for(auto iter = map.begin(); iter != map.end(); iter++)
+        {
+            int a = iter->getRowId();
+            int b = iter->getColId();
+            if(row >= a && row <= a+50 && col >= b && col <= b+50)
+            {
+                return *iter;
+            }
+        }
+        return Block(0,0,"");
+    };
     void deleteBlock(int row, int col)
     {
         for(auto iter = map.begin(); iter != map.end(); iter++)
         {
-            if(iter->getRowId() == row && iter->getColId() == col)
+            int a = iter->getRowId();
+            int b = iter->getColId();
+            if(row >= a && row <= a+50 && col >= b && col <= b+50)
             {
                 map.erase(iter);
                 return;

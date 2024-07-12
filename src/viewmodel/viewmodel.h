@@ -15,6 +15,10 @@ public:
     std::shared_ptr<Map> get_map();//获取model里的map属性
     bool move(int i,int j);//在view里面通过四个按键的状态决定i和j的值，向x正方向移动i为1，反方向为-1
                            //向y正方向移动j为1，反方向为-1。静止时两个都为0
+    bool bulletMove(int i);
+    bool bulletMove(Bullet* q);
+    bool enemyMove(double dir,int i);
+    bool shot(double dir);
 private:
     std::shared_ptr<dataModel> datamodel;
     std::shared_ptr<moveCommand> cmd_move;
