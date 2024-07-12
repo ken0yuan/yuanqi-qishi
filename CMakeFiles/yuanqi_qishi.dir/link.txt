@@ -1,3 +1,0 @@
-E:\cmake-3.29.0-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\yuanqi_qishi.dir/objects.a
-D:\Dev-Cpp\TDM-GCC-64\bin\ar.exe qc CMakeFiles\yuanqi_qishi.dir/objects.a @CMakeFiles\yuanqi_qishi.dir\objects1.rsp
-D:\Dev-Cpp\TDM-GCC-64\bin\g++.exe -Wl,--whole-archive CMakeFiles\yuanqi_qishi.dir/objects.a -Wl,--no-whole-archive -o yuanqi_qishi.exe -Wl,--out-implib,libyuanqi_qishi.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\yuanqi_qishi.dir\linkLibs.rsp

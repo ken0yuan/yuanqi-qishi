@@ -15,7 +15,7 @@ public:
         this->row_id = row;
         this->col_id = col;
         this->speed=15;
-        this->radius=20;
+        this->radius=70;
         this->direction=0;
         moveTimer = new QTimer(this);  
         //connect(moveTimer, &QTimer::timeout, &Role::handleMovement);  

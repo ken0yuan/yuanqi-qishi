@@ -1,7 +1,7 @@
 #include "model.h"
 dataModel::dataModel():
     r(std::make_shared<Role>(250,250)),
-    m(std::make_shared<Map>("C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/map.txt"))
+    m(std::make_shared<Map>("E:/c++/yuanqi_qishi/src/map.txt"))
 {
     qDebug()<<m->isRock(1,1);
     qDebug()<<m->isRock(50,52);
@@ -69,21 +69,21 @@ bool dataModel::coli(int i,int j)
     int x=r->getRowId();
     int y=r->getColId();
     int ra=r->getRadius();
-    if((m->isBox(x-ra,y)||m->isRock(x-ra,y))&&i<0)
+    if((m->isBox((x-ra)/50,y/50)||m->isRock((x-ra)/50,y/50))&&i<0)
         return true;
-    if((m->isBox(x-ra,y+ra)||m->isRock(x-ra,y+ra))&&(i<0||j>0))
+    if((m->isBox(x-ra,y+ra)||m->isRock((x-ra)/50,(y+ra)/50))&&(i<0||j>0))
         return true;
-    if((m->isBox(x,y+ra)||m->isRock(x,y+ra))&&j>0)
+    if((m->isBox(x,y+ra)||m->isRock(x/50,(y+ra)/50))&&j>0)
         return true;
-    if((m->isBox(x+ra,y+ra)||m->isRock(x+ra,y+ra))&&(i>0||j>0))
+    if((m->isBox(x+ra,y+ra)||m->isRock((x+ra)/50,(y+ra)/50))&&(i>0||j>0))
         return true;
-    if((m->isBox(x+ra,y)||m->isRock(x+ra,y))&&i>0)
+    if((m->isBox(x+ra,y)||m->isRock((x+ra)/50,y/50))&&i>0)
         return true;
-    if((m->isBox(x+ra,y-ra)||m->isRock(x+ra,y-ra))&&(i>0||j<0))
+    if((m->isBox(x+ra,y-ra)||m->isRock((x+ra)/50,(y-ra)/50))&&(i>0||j<0))
         return true;
-    if((m->isBox(x,y-ra)||m->isRock(x,y-ra))&&j<0)
+    if((m->isBox(x,y-ra)||m->isRock(x/50,(y-ra)/50))&&j<0)
         return true;
-    if((m->isBox(x-ra,y-ra)||m->isRock(x-ra,y-ra))&&(i<0||j<0))
+    if((m->isBox(x-ra,y-ra)||m->isRock((x-ra)/50,(y-ra)/50))&&(i<0||j<0))
         return true;
     qDebug()<<"not coli";
     return false;

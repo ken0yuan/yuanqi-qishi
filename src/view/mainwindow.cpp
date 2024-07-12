@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     //connect(ui->m_move_command.get(), &ICommandBase::CanExecuteChanged, this, &MainWindow::on_can_execute_changed);
     // 设置背景图片
     runtime=new QTimer(this);
+    paintflag=0;
     runtime->start(1000);
     connect(runtime,SIGNAL(timeout()),this,SLOT(update()));
     //qDebug() << "finish connect";
@@ -82,40 +83,54 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPixmap downImage(":/new/prefix1/images/l3.png");
     QPixmap leftImage(":/new/prefix1/images/l3.png");
     QPixmap rightImage(":/new/prefix1/images/r1.png");
+    QPixmap rockImage(":/new/prefix1/images/rock.png");
+    QPixmap grassImage(":/new/prefix1/images/grass.png");
     QPixmap a=leftImage;
     QPixmap b=rightImage;
     //painter.drawPixmap(400,300,100,100,QPixmap(":/new/prefix1/images/l3.png"));
+    //if(paintflag==0)
+    //{
+    for(int i=0;i<=1500;i+=50)
+    {
+        for(int j=0;j<=1500;j+=50)
+        {
+            if(M->isRock(i/50,j/50))
+                painter.drawPixmap(i,j,50,50,rockImage);
+            else 
+                painter.drawPixmap(i,j,50,50,grassImage);
+        }
+    }
     switch (R->getdirection())
     {
     case 1:
         qDebug()<<"direction1";
         qDebug()<<R->getRowId()<<R->getColId();
         tmp=leftImage;
-        painter.drawPixmap(R->getRowId(),R->getColId(),140,140,tmp);
+        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     case 2:
         qDebug()<<"direction2";
         qDebug()<<R->getRowId()<<R->getColId();
         tmp=rightImage;
-        painter.drawPixmap(R->getRowId(),R->getColId(),140,140,tmp);
+        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     case 3:
         qDebug()<<"direction3";
         qDebug()<<R->getRowId()<<R->getColId();
-        painter.drawPixmap(R->getRowId(),R->getColId(),140,140,tmp);
+        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     case 4:
         qDebug()<<"direction4";
         qDebug()<<R->getRowId()<<R->getColId();
-        painter.drawPixmap(R->getRowId(),R->getColId(),140,140,tmp);
+        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     case 0:
         qDebug()<<"direction0";
         qDebug()<<R->getRowId()<<R->getColId();
-        painter.drawPixmap(R->getRowId(),R->getColId(),140,140,tmp);
+        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     }
-};
+}
 void MainWindow::set_role(const std::shared_ptr<Role> r)
 {
     //qDebug()<<"set_role";

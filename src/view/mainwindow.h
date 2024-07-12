@@ -38,7 +38,6 @@ public:
     void set_map(const std::shared_ptr<Map> m);
     void init();
     std::shared_ptr<IPropertyNotification> get_property_sink() throw();
-    
 protected:
     virtual void paintEvent(QPaintEvent *event);
     virtual void keyPressEvent(QKeyEvent *event);
