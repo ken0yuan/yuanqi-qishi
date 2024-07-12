@@ -2,7 +2,7 @@
 #include "mainwindow.h"
 #include <QKeyEvent>
 #include <any>
-
+#define M_PI       3.14159265358979323846
 QPainter *paint_my_window;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -35,6 +35,10 @@ void MainWindow::set_move_command(std::shared_ptr<ICommandBase> move_command)
     //qDebug()<<"set_move_command";
     cmd_move = move_command;
 };
+void MainWindow::set_shot_command(std::shared_ptr<ICommandBase> shot_command)
+{
+    cmd_shot = shot_command;
+}
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     //qDebug()<<"keyPressEvent";
@@ -64,6 +68,44 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         cmd_move->Exec();
     }
 };
+void MainWindow::mousePressEvent(QMouseEvent *event)
+{
+    click_x=event->x();
+    click_y=event->y();
+    if(event->buttons()==(Qt::LeftButton))
+    {
+        qDebug()<<"Shot";
+        std::any param (std::make_any<ShotParameter>());
+        ShotParameter& dir= std::any_cast<ShotParameter&>(param);
+        if(click_x==R->getRowId())
+        {
+            if(click_y>R->getColId())
+                dir.dir=M_PI/2.0;
+            else
+                dir.dir=-M_PI/2.0;
+        }
+        else
+        {
+            double k=(double)(click_y-R->getColId())/(double)(click_x-R->getRowId());
+            if(click_y>R->getColId())
+            {
+                if(k>0)
+                    dir.dir=atan(k);
+                else
+                    dir.dir=atan(k)+M_PI;
+            }
+            else
+            {
+                if(k>0)
+                    dir.dir=atan(k)-M_PI;
+                else
+                    dir.dir=atan(k);
+            }
+        }
+        cmd_shot->SetParameter(param);
+        cmd_shot->Exec();
+    }
+}
 void MainWindow::init()
 {
     //qDebug()<<"init";

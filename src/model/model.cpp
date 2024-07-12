@@ -1,9 +1,14 @@
 #include "model.h"
 dataModel::dataModel():
+<<<<<<< HEAD
+    r(std::make_shared<Role>(1250,750)),
+    m(std::make_shared<Map>("E:/c++/yuanqi_qishi/src/map.txt"))
+=======
     r(std::make_shared<Role>(750,750)),
     m(std::make_shared<Map>("C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/map.txt")),
     e(),
     b()
+>>>>>>> aa426403ccccd7e01a09cdcc98626ae7e405979b
 {
     qDebug()<<m->isRock(1,1);
     qDebug()<<m->isRock(50,52);

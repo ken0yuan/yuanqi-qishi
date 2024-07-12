@@ -15,6 +15,7 @@
 #include <QString>
 #include <QMessageBox>
 #include <QWidget>
+#include <cmath>
 #include <any>
 #include "../common/parameter.h"
 #include "../common/role.h"
@@ -34,6 +35,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void set_move_command(std::shared_ptr<ICommandBase> move_command);
+    void set_shot_command(std::shared_ptr<ICommandBase> shot_command);
     void set_role(const std::shared_ptr<Role> r);
     void set_map(const std::shared_ptr<Map> m);
     void init();
@@ -41,14 +43,16 @@ public:
 protected:
     virtual void paintEvent(QPaintEvent *event);
     virtual void keyPressEvent(QKeyEvent *event);
-
+    virtual void mousePressEvent(QMouseEvent *event);
 private:
     Ui::MainWindow *ui;
     std::shared_ptr<Role> R;
     std::shared_ptr<Map> M;
+    std::shared_ptr<ICommandBase> cmd_shot;
     std::shared_ptr<ICommandBase> cmd_move;
     std::shared_ptr<MainWindowSink> m_sink;
     QTimer *runtime;
+    int click_x,click_y;
     QPixmap tmp;
 };
 
