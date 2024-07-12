@@ -9,6 +9,7 @@ void MainWindowSink::OnPropertyChanged(const std::string& str)
     }
     if(str=="leftmove")
     {
+        
         pmw->update();
     }
     if(str=="rightmove")

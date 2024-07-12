@@ -1,13 +1,11 @@
 #include "model.h"
 dataModel::dataModel():
-    r(std::make_shared<Role>(750,750)),
-    m(std::make_shared<Map>("C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/map.txt"))
+    r(std::make_shared<Role>(1250,750)),
+    m(std::make_shared<Map>("E:/c++/yuanqi_qishi/src/map.txt"))
 {
     qDebug()<<m->isRock(1,1);
     qDebug()<<m->isRock(50,52);
     qDebug()<<m->isRock(50,50);
-    r->setGeometry(250,250,100,100);
-    r->show();
 }
 std::shared_ptr<Role> dataModel::get_role() throw()
 {
