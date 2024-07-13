@@ -19,8 +19,10 @@ public:
     std::shared_ptr<Role> get_role() throw();
     std::shared_ptr<Map> get_map() throw();
     std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> get_bullet() throw();
+    std::shared_ptr<std::vector<std::shared_ptr<Enemy>>> get_enemy() throw();
     bool move(int i,int j);
     bool shot(double dir);
+    bool enemyShot(double dir,int i);
     bool bulletMove(int i);
     bool bulletMove(Bullet* q);
     bool enemyMove(double dir,int i);
@@ -28,7 +30,7 @@ public:
 private:
     std::shared_ptr<Role> r;
     std::shared_ptr<Map> m;
-    std::vector<std::shared_ptr<Enemy>> e;
+    std::shared_ptr<std::vector<std::shared_ptr<Enemy>>> e;
     std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> b;
 };
 

@@ -72,6 +72,10 @@ add_executable(yuanqi_qishi
             src/viewmodel/commands/bulletMove.h
             src/viewmodel/commands/shot.cpp
             src/viewmodel/commands/shot.h
+            src/viewmodel/commands/enemyMove.h
+            src/viewmodel/commands/enemyMove.cpp
+            src/viewmodel/commands/enemyshot.h
+            src/viewmodel/commands/enemyshot.cpp
             src/model/model.cpp
             src/model/model.h
             src/images.qrc

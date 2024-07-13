@@ -27,6 +27,14 @@ std::shared_ptr<ICommandBase> viewmodel::get_shot_command() throw()
 {
     return std::static_pointer_cast<ICommandBase>(cmd_shot);
 }
+std::shared_ptr<ICommandBase> viewmodel::get_enemyShot_command() throw()
+{
+    return std::static_pointer_cast<ICommandBase>(cmd_enemyShot);
+}
+std::shared_ptr<ICommandBase> viewmodel::get_enemyMove_command() throw()
+{
+    return std::static_pointer_cast<ICommandBase>(cmd_enemyMove);
+}
 std::shared_ptr<Role> viewmodel::get_role()
 {
     return datamodel->get_role();
@@ -38,6 +46,10 @@ std::shared_ptr<Map> viewmodel::get_map()
 std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> viewmodel::get_bullet()
 {
     return datamodel->get_bullet();
+}
+std::shared_ptr<std::vector<std::shared_ptr<Enemy>>> viewmodel::get_enemy()
+{
+    return datamodel->get_enemy();
 }
 bool viewmodel::move(int i,int j)
 {
@@ -63,4 +75,8 @@ bool viewmodel::shot(double dir)
 {
     //qDebug()<<"viewmodelshot";
     return datamodel->shot(dir);
+}
+bool viewmodel::enemyShot(double dir,int i)
+{
+    return datamodel->enemyShot(dir,i);
 }

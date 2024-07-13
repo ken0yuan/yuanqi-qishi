@@ -206,4 +206,41 @@ public:
 public:
     int i;
 };
+
+class EnemyParameter{
+public:
+    EnemyParameter() throw(){};
+    EnemyParameter(const EnemyParameter& src):dir(src.dir),i(src.i){};
+    EnemyParameter(EnemyParameter&& src)
+    {
+        dir = static_cast<double&&>(src.dir);
+        i = static_cast<int&&>(src.i);
+    };
+    EnemyParameter(double a, int b)
+    {
+        dir = a;
+        i = b;
+    };
+    EnemyParameter& operator=(const EnemyParameter& src)
+    {
+        if (this!=&src)
+        {
+            dir = src.dir;
+            i = src.i;
+        }
+        return *this;
+    };
+    EnemyParameter& operator=(EnemyParameter&& src)
+    {
+        if (this!=&src)
+        {
+            dir = src.dir;
+            i = src.i;
+        }
+        return *this;
+    };
+public:
+    double dir;
+    int i;
+};
 #endif
