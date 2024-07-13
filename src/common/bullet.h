@@ -20,7 +20,10 @@ public:
         this->hurt=1;
         this->dir=dir;
         this->radius=radius;
-        this->speed=15;
+        if(type == "mine")
+            this->speed=15;
+        else if(type == "enemy")
+            this->speed=10;
         //timer = new QTimer(this);  
         //QObject::connect(timer, &QTimer::timeout, &Bullet::move); 
         //timer->start(100);

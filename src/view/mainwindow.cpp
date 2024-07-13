@@ -11,18 +11,24 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
     , m_sink(std::make_shared<MainWindowSink>(this))
     , tmp(":/new/prefix1/images/r1.png")
+    , direction(std::vector<double>(3,0.0))
 {
     ui->setupUi(this);
     //connect(ui->m_move_command.get(), &ICommandBase::CanExecuteChanged, this, &MainWindow::on_can_execute_changed);
     // 设置背景图片
     runtime=new QTimer(this);
     bulletmovetime=new QTimer(this);
+    enemyshottime=new QTimer(this);
     //paintflag=0;
     runtime->start(1000);
     bulletmovetime->start(15);
+    enemyshottime->start(2000);
     connect(runtime,SIGNAL(timeout()),this,SLOT(update()));
+    connect(runtime,SIGNAL(timeout()),this,SLOT(slotrandomdirection()));
     connect(bulletmovetime,SIGNAL(timeout()),this,SLOT(slotbulletmove()));
-    //qDebug() << "finish connect";
+    connect(bulletmovetime,SIGNAL(timeout()),this,SLOT(slotenemymove()));
+    connect(enemyshottime,SIGNAL(timeout()),this,SLOT(slotenemyshot()));
+    qDebug()<<direction[0]<<direction[1]<<direction[2];
     //ui->backgroundLabel->setPixmap(QPixmap(":/images/background.png"));
     //ui->backgroundLabel->setScaledContents(true);
     //ui->backgroundLabel->lower();
@@ -47,6 +53,14 @@ void MainWindow::set_bulletmove_command(std::shared_ptr<ICommandBase> bullet_com
 {
     cmd_bulletmove = bullet_command;
 }
+void MainWindow::set_enemymove_command(std::shared_ptr<ICommandBase> enemymove_command)
+{
+    cmd_enemymove = enemymove_command;
+}
+void MainWindow::set_enemyshot_command(std::shared_ptr<ICommandBase> enemyshot_command)
+{
+    cmd_enemyshot = enemyshot_command;
+}
 void MainWindow::slotbulletmove()
 {
     for(int i=0;i<(*B).size();i++)
@@ -57,6 +71,63 @@ void MainWindow::slotbulletmove()
         j.i=i;
         cmd_bulletmove->SetParameter(param);
         cmd_bulletmove->Exec();
+    }
+}
+void MainWindow::slotrandomdirection()
+{
+    for(int i=0;i<(*E).size();i++)
+    {
+        direction[i] = QRandomGenerator::global()->bounded(2 * M_PI) - M_PI;
+    }
+}
+void MainWindow::slotenemyshot()
+{
+    for(int i=0;i<(*E).size();i++)
+    {
+        std::any param (std::make_any<EnemyParameter>());
+        EnemyParameter& j=std::any_cast<EnemyParameter&>(param);
+        if((*E)[i]->getRowId()==R->getRowId())
+        {
+            if(R->getColId()>(*E)[i]->getRowId())
+                j.dir=M_PI/2.0;
+            else
+                j.dir=-M_PI/2.0;
+        }
+        else
+        {
+            double k=(double)(R->getColId()-(*E)[i]->getColId())/(double)(R->getRowId()-(*E)[i]->getRowId());
+            if(R->getColId()>(*E)[i]->getColId())
+            {
+                if(k>0)
+                    j.dir=atan(k);
+                else
+                    j.dir=atan(k)+M_PI;
+            }
+            else
+            {
+                if(k>0)
+                    j.dir=atan(k)-M_PI;
+                else
+                    j.dir=atan(k);
+            }
+        }
+        j.i=i;
+        cmd_enemyshot->SetParameter(param);
+        cmd_enemyshot->Exec();
+    }
+}
+void MainWindow::slotenemymove()
+{
+    for(int i=0;i<(*E).size();i++)
+    {
+        //qDebug()<<"slotenemymove";
+        std::any param (std::make_any<EnemyParameter>());
+        EnemyParameter& j=std::any_cast<EnemyParameter&>(param);
+        j.dir=direction[i];
+        j.i=i;
+        //qDebug()<<j.dir<<j.i;
+        cmd_enemymove->SetParameter(param);
+        cmd_enemymove->Exec();
     }
 }
 void MainWindow::keyPressEvent(QKeyEvent *event)
@@ -149,7 +220,11 @@ void MainWindow::paintEvent(QPaintEvent *event)
     QPixmap rockImage(":/new/prefix1/images/rock.png");
     QPixmap grassImage(":/new/prefix1/images/grass.png");
     QPixmap bulletImage(":/new/prefix1/images/bullet.png");
+    QPixmap enemybulletImage(":/new/prefix1/images/enemybullet.png");
     QPixmap boxImage(":/new/prefix1/images/box.png");
+    QPixmap pigImage(":/new/prefix1/images/pig.png");
+    QPixmap bossImage(":/new/prefix1/images/boss.png");
+    QPixmap archerImage(":/new/prefix1/images/archer.png");
     QPixmap a=leftImage;
     QPixmap b=rightImage;
     //painter.drawPixmap(400,300,100,100,QPixmap(":/new/prefix1/images/l3.png"));
@@ -197,10 +272,23 @@ void MainWindow::paintEvent(QPaintEvent *event)
         painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
         break;
     }
+    for(int i=0;i<(*E).size();i++)
+    {
+        int radius=(*E)[i]->getRadius();
+        if((*E)[i]->getType()=="pig")
+            painter.drawPixmap((*E)[i]->getRowId()-radius,(*E)[i]->getColId()-radius,2*radius,2*radius,pigImage);
+        else if((*E)[i]->getType()=="boss")
+            painter.drawPixmap((*E)[i]->getRowId()-radius,(*E)[i]->getColId()-radius,2*radius,2*radius,bossImage);
+        else
+            painter.drawPixmap((*E)[i]->getRowId()-radius,(*E)[i]->getColId()-radius,2*radius,2*radius,archerImage);
+    }
     for(int i=0;i<(*B).size();i++)
     {
         int radius=(*B)[i]->getRadius();
-        painter.drawPixmap((*B)[i]->getRowId()-radius,(*B)[i]->getColId()-radius,radius*2,radius*2,bulletImage);
+        if((*B)[i]->getType()=="mine")
+            painter.drawPixmap((*B)[i]->getRowId()-radius,(*B)[i]->getColId()-radius,radius*2,radius*2,bulletImage);
+        else
+            painter.drawPixmap((*B)[i]->getRowId()-radius,(*B)[i]->getColId()-radius,radius*2,radius*2,enemybulletImage);
     }
     /*
     painter.setBrush(Qt::red);
@@ -287,5 +375,11 @@ void MainWindow::set_map(const std::shared_ptr<Map> m)
 }
 void MainWindow::set_bullet(const std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> b)
 {
+    //qDebug()<<"set_bullet";
     this->B=b;
+}
+void MainWindow::set_enemy(const std::shared_ptr<std::vector<std::shared_ptr<Enemy>>> e)
+{
+    //qDebug()<<"set_enemy";
+    this->E=e;
 }

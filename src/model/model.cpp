@@ -5,12 +5,12 @@ dataModel::dataModel():
     e(std::make_shared<std::vector<std::shared_ptr<Enemy>>>()),
     b(std::make_shared<std::vector<std::shared_ptr<Bullet>>>())
 {
-    (*e).push_back(std::make_shared<Enemy>(1800,1800,"pig"));
-    (*e).push_back(std::make_shared<Enemy>(1000,1800,"boss"));
+    (*e).push_back(std::make_shared<Enemy>(1800,1300,"pig"));
+    (*e).push_back(std::make_shared<Enemy>(1000,500,"boss"));
     (*e).push_back(std::make_shared<Enemy>(1800,1000,"archer"));
-    qDebug()<<m->isRock(1,1);
-    qDebug()<<m->isRock(50,52);
-    qDebug()<<m->isRock(50,50);
+    //qDebug()<<m->isRock(1,1);
+    //qDebug()<<m->isRock(50,52);
+    //qDebug()<<m->isRock(50,50);
 }
 std::shared_ptr<Role> dataModel::get_role() throw()
 {
@@ -167,11 +167,11 @@ bool dataModel::bulletMove(Bullet* q)
     return true;
 }
 bool dataModel::enemyMove(double dir,int i)
-{
-    int x=(*e)[i]->getRowId();
-    int y=(*e)[i]->getColId();
+{   
     int speed=(*e)[i]->getSpeed();
     int radius=(*e)[i]->getRadius();
+    int x=(*e)[i]->getRowId()+speed*sin(dir);
+    int y=(*e)[i]->getColId()+speed*sin(dir);
     double dis=sqrt((r->getRowId()-x)*(r->getRowId()-x)+(r->getColId()-y)*(r->getColId()-y));
     if (m->isRock((x+radius*cos(dir))/50,(y+radius*sin(dir))/50)||
     m->isRock((x+radius)/50,(y+radius)/50)||
@@ -186,8 +186,9 @@ bool dataModel::enemyMove(double dir,int i)
     {
         return false;
     }
-    (*e)[i]->setRow(x+speed*sin(dir));
-    (*e)[i]->setCol(y+speed*cos(dir));
+    (*e)[i]->setRow(x);
+    (*e)[i]->setCol(y);
+    Fire_OnPropertyChanged("bulletMove");
     return true;
 }
 bool dataModel::move(int i,int j)
@@ -258,6 +259,6 @@ bool dataModel::coli(int i,int j)
         return true;
     if((m->isBox((x-ra)/50,(y-ra)/50)||m->isRock((x-ra)/50,(y-ra)/50))&&(i<0||j<0))
         return true;
-    qDebug()<<"not coli";
+    //qDebug()<<"not coli";
     return false;
 }//如果在运动的方向上和墙接触，就会发生碰撞

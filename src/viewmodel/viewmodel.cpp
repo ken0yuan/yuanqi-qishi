@@ -3,6 +3,8 @@ viewmodel::viewmodel():
     cmd_move(std::make_shared<moveCommand>(this)),
     cmd_shot(std::make_shared<shotCommand>(this)),
     cmd_bulletMove(std::make_shared<bulletMoveCommand>(this)),
+    cmd_enemyMove(std::make_shared<enemyMoveCommand>(this)),
+    cmd_enemyShot(std::make_shared<enemyShotCommand>(this)),
     m_sink(std::make_shared<viewmodelSink>(this))
 {}
 void viewmodel::set_model(const std::shared_ptr<dataModel>& model)
