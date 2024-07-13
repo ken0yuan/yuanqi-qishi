@@ -1,16 +1,16 @@
 #include "model.h"
 dataModel::dataModel():
     r(std::make_shared<Role>(750,750)),
-    m(std::make_shared<Map>("C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/map.txt")),
+    m(std::make_shared<Map>("E:/c++/yuanqi_qishi/src/map.txt")),
     e(std::make_shared<std::vector<std::shared_ptr<Enemy>>>()),
     b(std::make_shared<std::vector<std::shared_ptr<Bullet>>>())
 {
-    (*e).push_back(std::make_shared<Enemy>(1800,1800,"pig"));
-    (*e).push_back(std::make_shared<Enemy>(1000,1800,"boss"));
+    (*e).push_back(std::make_shared<Enemy>(1800,1300,"pig"));
+    (*e).push_back(std::make_shared<Enemy>(1000,500,"boss"));
     (*e).push_back(std::make_shared<Enemy>(1800,1000,"archer"));
-    qDebug()<<m->isRock(1,1);
-    qDebug()<<m->isRock(50,52);
-    qDebug()<<m->isRock(50,50);
+    //qDebug()<<m->isRock(1,1);
+    //qDebug()<<m->isRock(50,52);
+    //qDebug()<<m->isRock(50,50);
 }
 std::shared_ptr<Role> dataModel::get_role() throw()
 {
@@ -258,6 +258,6 @@ bool dataModel::coli(int i,int j)
         return true;
     if((m->isBox((x-ra)/50,(y-ra)/50)||m->isRock((x-ra)/50,(y-ra)/50))&&(i<0||j<0))
         return true;
-    qDebug()<<"not coli";
+    //qDebug()<<"not coli";
     return false;
 }//如果在运动的方向上和墙接触，就会发生碰撞

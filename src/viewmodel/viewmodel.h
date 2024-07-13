@@ -5,8 +5,8 @@
 #include "commands/bulletMove.h"
 #include "commands/shot.h"
 #include "../common/base.h"
-#include "../commands/enemyMove.h"
-#include "../commands/enemyshot.h"
+#include "commands/enemyMove.h"
+#include "commands/enemyshot.h"
 #include "sink/viewmodelsink.h"
 class viewmodel:public Proxy_CommandNotification<viewmodel>,public Proxy_PropertyNotification<viewmodel>
 {

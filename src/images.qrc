@@ -11,5 +11,9 @@
         <file>images/red.png</file>
         <file>images/blue.png</file>
         <file>images/grey.png</file>
+        <file>images/enemybullet.png</file>
+        <file>images/pig.png</file>
+        <file>images/boss.png</file>
+        <file>images/archer.png</file>
     </qresource>
 </RCC>

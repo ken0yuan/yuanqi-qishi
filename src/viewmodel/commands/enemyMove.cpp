@@ -1,6 +1,6 @@
 #include "enemyMove.h"
 #include "../viewmodel.h"
-enemyMoveCommand::enemyMoveCommand(viewmodel* p) throw():pvm(p),param(0,0){}
+enemyMoveCommand::enemyMoveCommand(viewmodel* p) throw():pvm(p),param(0.0,0){}
 void enemyMoveCommand::SetParameter(const std::any& lparam)
 {
     //qDebug()<<"SetParameter";
@@ -11,6 +11,8 @@ void enemyMoveCommand::Exec()
 {
     double dir;
     int i;
-    //qDebug()<<"Derection is x:" << i << " y:" << j;
+    dir=param.dir;
+    i=param.i;
+    //qDebug()<<"Derection is dir:" << dir << " i:" << i;
     pvm->enemyMove(dir,i);
 }

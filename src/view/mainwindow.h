@@ -15,6 +15,7 @@
 #include <QString>
 #include <QMessageBox>
 #include <QWidget>
+#include <QRandomGenerator>
 #include <cmath>
 #include <any>
 #include "../common/parameter.h"
@@ -22,6 +23,7 @@
 #include "../common/map.h"
 #include "../common/base.h"
 #include "../common/bullet.h"
+#include "../common/monster.h"
 #include "sink/mainwindowsink.h"
 
 QT_BEGIN_NAMESPACE
@@ -39,6 +41,7 @@ public:
     void set_shot_command(std::shared_ptr<ICommandBase> shot_command);
     void set_bulletmove_command(std::shared_ptr<ICommandBase> bullet_command);
     void set_enemymove_command(std::shared_ptr<ICommandBase> enemymove_command);
+    void set_enemyshot_command(std::shared_ptr<ICommandBase> enemyshot_command);
     void set_role(const std::shared_ptr<Role> r);
     void set_map(const std::shared_ptr<Map> m);
     void set_bullet(const std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> b);
@@ -63,6 +66,7 @@ private:
     std::shared_ptr<ICommandBase> cmd_move;
     std::shared_ptr<ICommandBase> cmd_bulletmove;
     std::shared_ptr<ICommandBase> cmd_enemymove;
+    std::shared_ptr<ICommandBase> cmd_enemyshot;
     std::shared_ptr<MainWindowSink> m_sink;
     QTimer *runtime;
     QTimer *bulletmovetime;

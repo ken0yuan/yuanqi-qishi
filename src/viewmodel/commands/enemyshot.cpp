@@ -1,6 +1,6 @@
 #include "enemyshot.h"
 #include "../viewmodel.h"
-enemyShotCommand::enemyShotCommand(viewmodel* p) throw():pvm(p),param(0,0){}
+enemyShotCommand::enemyShotCommand(viewmodel* p) throw():pvm(p),param(0.0,0){}
 void enemyShotCommand::SetParameter(const std::any& lparam)
 {
     //qDebug()<<"SetParameter";
@@ -11,6 +11,8 @@ void enemyShotCommand::Exec()
 {
     double dir;
     int i;
-    //qDebug()<<"Derection is x:" << i << " y:" << j;
+    dir=param.dir;
+    i=param.i;
+    //qDebug()<<"Derection is dir:" << dir << " i:" << i;
     pvm->enemyShot(dir,i);
 }
