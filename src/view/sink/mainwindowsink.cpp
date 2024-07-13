@@ -28,4 +28,16 @@ void MainWindowSink::OnPropertyChanged(const std::string& str)
     {
         pmw->update();
     }
+    if(str=="gameover")
+    {
+        pmw->update();
+        QMessageBox::information(pmw, "Game Over", "You Lose!");
+        exit(0);
+    }
+    if(str=="win")
+    {
+        pmw->update();
+        QMessageBox::information(pmw, "Game Over", "You win!");
+        exit(0);
+    }
 }

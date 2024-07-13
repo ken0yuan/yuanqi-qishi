@@ -84,6 +84,8 @@ void MainWindow::slotenemyshot()
 {
     for(int i=0;i<(*E).size();i++)
     {
+        if((*E)[i]->getFrighten(R->getRowId(),R->getColId()))
+        {
         std::any param (std::make_any<EnemyParameter>());
         EnemyParameter& j=std::any_cast<EnemyParameter&>(param);
         if((*E)[i]->getRowId()==R->getRowId())
@@ -114,6 +116,7 @@ void MainWindow::slotenemyshot()
         j.i=i;
         cmd_enemyshot->SetParameter(param);
         cmd_enemyshot->Exec();
+        }
     }
 }
 void MainWindow::slotenemymove()

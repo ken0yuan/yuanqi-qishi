@@ -3,7 +3,7 @@
 //暂时缺少部分关于怪物运动的函数
 #include<string>
 #include<cmath>
-#define FRIGHTEN_RADIUS 200
+#define FRIGHTEN_RADIUS 1000
 class Enemy{
     //Q_OBJECT
 public:

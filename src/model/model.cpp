@@ -117,6 +117,10 @@ bool dataModel::bulletMove(int i)
                     {
                         (*e).erase((*e).begin()+j);
                     }
+                    if((*e).size()==0)
+                    {
+                        Fire_OnPropertyChanged("win");
+                    }
                     (*b).erase((*b).begin()+i);
                     return true;
                 }
@@ -128,6 +132,10 @@ bool dataModel::bulletMove(int i)
             {
                 (*b).erase((*b).begin()+i);
                 r->hurt((*b)[i]->getHurt());
+                if(r->getHP()<=0)
+                {
+                    Fire_OnPropertyChanged("gameover");
+                }
                 return true;
             }
         }
