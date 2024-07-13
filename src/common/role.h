@@ -20,7 +20,7 @@ public:
         this->row_id = row;
         this->col_id = col;
         this->speed=15;
-        this->radius=70;
+        this->radius=50;
         this->direction=0;
         this->HP=MAXHP;
         this->MP=MAXMP;

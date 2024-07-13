@@ -14,8 +14,20 @@ public:
         if(type == "pig"||type == "boss" ||type == "archer")
             this->type = type;
         this->frighten=false;
-        this->radius=70;
+        this->radius=50;
         this->speed=5;
+        if (type == "pig")
+        {
+            this->HP=2;
+        }
+        else if (type=="archer")
+        {
+            this->HP=4;
+        }
+        else if (type=="boss")
+        {
+            this->HP=10;
+        }
         //startTimer = new QTimer(this);
         //moveTimer = new QTimer(this);
         //stopTimer = new QTimer(this);
@@ -62,6 +74,11 @@ public:
             return 3;
         return 0;
     };
+    int decreaseHP(int hurt)
+    {
+        HP -= hurt;
+        return HP;
+    };
     void setRow(int row){this->row_id = row;};
     void setCol(int col){this->col_id = col;};
     void setRadius(int radius){this->radius = radius;};
@@ -98,6 +115,7 @@ public:
         startTimer->start(2000); // 2000毫秒后重新开始移动
     };*/
 private:
+    int HP;
     int row_id;
     int col_id;
     int radius;

@@ -1,13 +1,13 @@
 #include "model.h"
 dataModel::dataModel():
-    r(std::make_shared<Role>(750,750)),
-    m(std::make_shared<Map>("C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/map.txt")),
+    r(std::make_shared<Role>(700,150)),
+    m(std::make_shared<Map>("src/map.txt")),
     e(std::make_shared<std::vector<std::shared_ptr<Enemy>>>()),
     b(std::make_shared<std::vector<std::shared_ptr<Bullet>>>())
 {
-    (*e).push_back(std::make_shared<Enemy>(1800,1300,"pig"));
-    (*e).push_back(std::make_shared<Enemy>(1000,500,"boss"));
-    (*e).push_back(std::make_shared<Enemy>(1800,1000,"archer"));
+    (*e).push_back(std::make_shared<Enemy>(800,1000,"pig"));
+    (*e).push_back(std::make_shared<Enemy>(1800,400,"boss"));
+    (*e).push_back(std::make_shared<Enemy>(1800,1300,"archer"));
     //qDebug()<<m->isRock(1,1);
     //qDebug()<<m->isRock(50,52);
     //qDebug()<<m->isRock(50,50);
@@ -112,8 +112,12 @@ bool dataModel::bulletMove(int i)
                 double dis_m=sqrt(((*e)[j]->getColId()-x)*((*e)[j]->getColId()-x)+(((*e)[j]->getRowId()-y)*((*e)[j]->getRowId()-y)));
                 if(dis_m<=(*e)[j]->getRadius()+radius)
                 {
+                    
+                    if ((*e)[j]->decreaseHP((*b)[i]->getHurt())<=0)
+                    {
+                        (*e).erase((*e).begin()+j);
+                    }
                     (*b).erase((*b).begin()+i);
-                    (*e).erase((*e).begin()+j);
                     return true;
                 }
             }
@@ -170,15 +174,24 @@ bool dataModel::enemyMove(double dir,int i)
 {   
     int speed=(*e)[i]->getSpeed();
     int radius=(*e)[i]->getRadius();
-    int x=(*e)[i]->getRowId()+speed*sin(dir);
-    int y=(*e)[i]->getColId()+speed*sin(dir);
+    int x=(*e)[i]->getRowId()+speed*(double)cos(dir);
+    int y=(*e)[i]->getColId()+speed*(double)sin(dir);
+    //qDebug()<<dir;
     double dis=sqrt((r->getRowId()-x)*(r->getRowId()-x)+(r->getColId()-y)*(r->getColId()-y));
     if (m->isRock((x+radius*cos(dir))/50,(y+radius*sin(dir))/50)||
     m->isRock((x+radius)/50,(y+radius)/50)||
     m->isRock((x-radius)/50,(y+radius)/50)||
     m->isRock((x-radius)/50,(y-radius)/50)||
     m->isRock((x+radius)/50,(y-radius)/50)||
+    m->isRock((x+radius)/50,(y)/50)||
+    m->isRock((x-radius)/50,(y)/50)||
+    m->isRock((x)/50,(y-radius)/50)||
+    m->isRock((x)/50,(y-radius)/50)||
     m->isBox((x+radius*cos(dir))/50,(y+radius*sin(dir))/50)||
+    m->isBox((x+radius)/50,(y)/50)||
+    m->isBox((x-radius)/50,(y)/50)||
+    m->isBox((x)/50,(y-radius)/50)||
+    m->isBox((x)/50,(y-radius)/50)||
     m->isBox((x+radius)/50,(y+radius)/50)||
     m->isBox((x-radius)/50,(y+radius)/50)||
     m->isBox((x-radius)/50,(y-radius)/50)||

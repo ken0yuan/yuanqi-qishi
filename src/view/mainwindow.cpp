@@ -201,7 +201,7 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
 void MainWindow::init()
 {
     //qDebug()<<"init";
-    resize(800, 600);
+    resize(3000, 2000);
 };
 std::shared_ptr<IPropertyNotification> MainWindow::get_property_sink() throw()
 {
@@ -242,34 +242,35 @@ void MainWindow::paintEvent(QPaintEvent *event)
                 painter.drawPixmap(i,j,50,50,grassImage);
         }
     }
+    int rrr=R->getRadius();
     switch (R->getdirection())
     {
     case 1:
         //qDebug()<<"direction1";
         //qDebug()<<R->getRowId()<<R->getColId();
         tmp=leftImage;
-        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
+        painter.drawPixmap(R->getRowId()-rrr,R->getColId()-rrr,rrr*2,rrr*2,tmp);
         break;
     case 2:
         //qDebug()<<"direction2";
         //qDebug()<<R->getRowId()<<R->getColId();
         tmp=rightImage;
-        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
+        painter.drawPixmap(R->getRowId()-rrr,R->getColId()-rrr,rrr*2,rrr*2,tmp);
         break;
     case 3:
         //qDebug()<<"direction3";
         //qDebug()<<R->getRowId()<<R->getColId();
-        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
+        painter.drawPixmap(R->getRowId()-rrr,R->getColId()-rrr,rrr*2,rrr*2,tmp);
         break;
     case 4:
         //qDebug()<<"direction4";
         //qDebug()<<R->getRowId()<<R->getColId();
-        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
+        painter.drawPixmap(R->getRowId()-rrr,R->getColId()-rrr,rrr*2,rrr*2,tmp);
         break;
     case 0:
         //qDebug()<<"direction0";
         //qDebug()<<R->getRowId()<<R->getColId();
-        painter.drawPixmap(R->getRowId()-70,R->getColId()-70,140,140,tmp);
+        painter.drawPixmap(R->getRowId()-rrr,R->getColId()-rrr,rrr*2,rrr*2,tmp);
         break;
     }
     for(int i=0;i<(*E).size();i++)
