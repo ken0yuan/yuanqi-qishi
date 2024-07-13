@@ -282,23 +282,9 @@ void MainWindow::paintEvent(QPaintEvent *event)
         else
             painter.drawPixmap((*E)[i]->getRowId()-radius,(*E)[i]->getColId()-radius,2*radius,2*radius,archerImage);
     }
-    for(int i=0;i<(*E).size();i++)
-    {
-        int radius=(*E)[i]->getRadius();
-        if((*E)[i]->getType()=="pig")
-            painter.drawPixmap((*E)[i]->getRowId()-radius,(*E)[i]->getColId()-radius,2*radius,2*radius,pigImage);
-        else if((*E)[i]->getType()=="boss")
-            painter.drawPixmap((*E)[i]->getRowId()-radius,(*E)[i]->getColId()-radius,2*radius,2*radius,bossImage);
-        else
-            painter.drawPixmap((*E)[i]->getRowId()-radius,(*E)[i]->getColId()-radius,2*radius,2*radius,archerImage);
-    }
     for(int i=0;i<(*B).size();i++)
     {
         int radius=(*B)[i]->getRadius();
-        if((*B)[i]->getType()=="mine")
-            painter.drawPixmap((*B)[i]->getRowId()-radius,(*B)[i]->getColId()-radius,radius*2,radius*2,bulletImage);
-        else
-            painter.drawPixmap((*B)[i]->getRowId()-radius,(*B)[i]->getColId()-radius,radius*2,radius*2,enemybulletImage);
         if((*B)[i]->getType()=="mine")
             painter.drawPixmap((*B)[i]->getRowId()-radius,(*B)[i]->getColId()-radius,radius*2,radius*2,bulletImage);
         else

@@ -16,7 +16,6 @@
 #include <QMessageBox>
 #include <QWidget>
 #include <QRandomGenerator>
-#include <QRandomGenerator>
 #include <cmath>
 #include <any>
 #include "../common/parameter.h"
@@ -24,7 +23,6 @@
 #include "../common/map.h"
 #include "../common/base.h"
 #include "../common/bullet.h"
-#include "../common/monster.h"
 #include "../common/monster.h"
 #include "sink/mainwindowsink.h"
 
