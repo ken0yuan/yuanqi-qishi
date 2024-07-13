@@ -47,6 +47,10 @@ void MainWindow::set_bulletmove_command(std::shared_ptr<ICommandBase> bullet_com
 {
     cmd_bulletmove = bullet_command;
 }
+void MainWindow::set_enemymove_command(std::shared_ptr<ICommandBase> enemymove_command)
+{
+    cmd_enemymove = enemymove_command;
+}
 void MainWindow::slotbulletmove()
 {
     for(int i=0;i<(*B).size();i++)
@@ -288,4 +292,8 @@ void MainWindow::set_map(const std::shared_ptr<Map> m)
 void MainWindow::set_bullet(const std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> b)
 {
     this->B=b;
+}
+void MainWindow::set_enemy(const std::shared_ptr<std::vector<std::shared_ptr<Enemy>>> e)
+{
+    this->E=e;
 }

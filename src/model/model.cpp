@@ -1,7 +1,7 @@
 #include "model.h"
 dataModel::dataModel():
     r(std::make_shared<Role>(750,750)),
-    m(std::make_shared<Map>("C:/Users/user/Desktop/name/C++/yuanqi_qishi/src/map.txt")),
+    m(std::make_shared<Map>("E:/c++/yuanqi_qishi/src/map.txt")),
     e(),
     b(std::make_shared<std::vector<std::shared_ptr<Bullet>>>())
 {
