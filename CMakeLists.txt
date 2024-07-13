@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 # 项目名称
 
 # 使用C++ 11标准进行编译
-set(CMAKE_PREFIX_PATH "E:/qqt/5.15.2/mingw81_64")
+set(CMAKE_PREFIX_PATH "E:/Qtt/5.14.2/mingw73_64")
 
 set(CMAKE_CXX_STANDARD 17)
 # 要求代码必须遵守C++11标准

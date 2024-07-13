@@ -53,9 +53,11 @@ public slots:
     void slotrandomdirection();
     void slotenemymove();
     void slotenemyshot();
+    void slotmove();
 protected:
     virtual void paintEvent(QPaintEvent *event);
     virtual void keyPressEvent(QKeyEvent *event);
+    virtual void keyReleaseEvent(QKeyEvent *event);
     virtual void mousePressEvent(QMouseEvent *event);
 private:
     Ui::MainWindow *ui;
@@ -73,6 +75,7 @@ private:
     QTimer *bulletmovetime;
     QTimer *enemyshottime;
     int click_x,click_y;
+    int move_x,move_y;
     std::vector<double> direction;
     QPixmap tmp;
 };

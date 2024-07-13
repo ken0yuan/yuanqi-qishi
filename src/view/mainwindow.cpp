@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     , m_sink(std::make_shared<MainWindowSink>(this))
     , tmp(":/new/prefix1/images/r1.png")
     , direction(std::vector<double>(3,0.0))
+    , move_x(0)
+    , move_y(0)
 {
     ui->setupUi(this);
     //connect(ui->m_move_command.get(), &ICommandBase::CanExecuteChanged, this, &MainWindow::on_can_execute_changed);
@@ -27,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(runtime,SIGNAL(timeout()),this,SLOT(slotrandomdirection()));
     connect(bulletmovetime,SIGNAL(timeout()),this,SLOT(slotbulletmove()));
     connect(bulletmovetime,SIGNAL(timeout()),this,SLOT(slotenemymove()));
+    connect(bulletmovetime,SIGNAL(timeout()),this,SLOT(slotmove()));
     connect(enemyshottime,SIGNAL(timeout()),this,SLOT(slotenemyshot()));
     qDebug()<<direction[0]<<direction[1]<<direction[2];
     //ui->backgroundLabel->setPixmap(QPixmap(":/images/background.png"));
@@ -133,35 +136,60 @@ void MainWindow::slotenemymove()
         cmd_enemymove->Exec();
     }
 }
+void MainWindow::slotmove()
+{
+    std::any param (std::make_any<MoveParameter>());
+    MoveParameter& dir= std::any_cast<MoveParameter&>(param);
+    dir.x=move_x;
+    dir.y=move_y;
+    cmd_move->SetParameter(param);
+    cmd_move->Exec();
+}
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     //qDebug()<<"keyPressEvent";
     if (event->key() == Qt::Key_W||event->key() == Qt::Key_A||event->key() == Qt::Key_S||event->key() == Qt::Key_D)
     {
-        std::any param2 (std::make_any<MoveParameter>());
-        MoveParameter& dir= std::any_cast<MoveParameter&>(param2);
-        dir.x=0;
-        dir.y=0;
         if (event->key() == Qt::Key_W)
         {
-            dir.y = -1;
+            move_y = -1;
         }
         if (event->key() == Qt::Key_A)
         {
-            dir.x = -1;
+            move_x = -1;
         }
         if (event->key() == Qt::Key_S)
         {
-            dir.y = 1;
+            move_y = 1;
         }
         if (event->key() == Qt::Key_D)
         {
-            dir.x = 1;
+            move_x = 1;
         }
-        cmd_move->SetParameter(param2);
-        cmd_move->Exec();
     }
 };
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_W||event->key() == Qt::Key_A||event->key() == Qt::Key_S||event->key() == Qt::Key_D)
+    {
+        if (event->key() == Qt::Key_W && move_y==-1)
+        {
+            move_y = 0;
+        }
+        if (event->key() == Qt::Key_A && move_x==-1)
+        {
+            move_x = 0;
+        }
+        if (event->key() == Qt::Key_S && move_y==1)
+        {
+            move_y = 0;
+        }
+        if (event->key() == Qt::Key_D && move_x==1)
+        {
+            move_x = 0;
+        }
+    }
+}
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
     click_x=event->x();
