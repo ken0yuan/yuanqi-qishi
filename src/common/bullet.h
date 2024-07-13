@@ -23,7 +23,7 @@ public:
         if(type == "mine")
             this->speed=15;
         else if(type == "enemy")
-            this->speed=10;
+            this->speed=7;
         //timer = new QTimer(this);  
         //QObject::connect(timer, &QTimer::timeout, &Bullet::move); 
         //timer->start(100);
