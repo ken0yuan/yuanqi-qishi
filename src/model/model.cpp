@@ -34,7 +34,7 @@ bool dataModel::shot(double dir)
 {
     //qDebug()<<"modelshot";
     if(r->shot(2))
-    b->push_back(std::make_shared<Bullet>(r->getRowId(),r->getColId(), 20, "mine", dir));
+        b->push_back(std::make_shared<Bullet>(r->getRowId(),r->getColId(),1, 20, "mine", dir));
     //qDebug()<<b.size();
     Fire_OnPropertyChanged("bulletMove");
     return true;
@@ -42,7 +42,12 @@ bool dataModel::shot(double dir)
 bool dataModel::enemyShot(double dir,int i)
 {
     //qDebug()<<"modelenemyShot";
-    b->push_back(std::make_shared<Bullet>((*e)[i]->getRowId(),(*e)[i]->getColId(), 20, "enemy", dir));
+    if((*e)[i]->getType()=="pig")
+        b->push_back(std::make_shared<Bullet>((*e)[i]->getRowId(),(*e)[i]->getColId(),1, 20, "enemy", dir));
+    else if((*e)[i]->getType()=="boss")
+        b->push_back(std::make_shared<Bullet>((*e)[i]->getRowId(),(*e)[i]->getColId(),3, 20, "enemy", dir));
+    else
+        b->push_back(std::make_shared<Bullet>((*e)[i]->getRowId(),(*e)[i]->getColId(),2, 20, "enemy", dir));
     //qDebug()<<b.size();
     Fire_OnPropertyChanged("bulletMove");
     return true;

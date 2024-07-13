@@ -9,21 +9,20 @@
 class Bullet{
     //Q_OBJECT
 public:
-    Bullet(int row, int col,int radius ,std::string type, double dir)
-    :row_id(row),col_id(col),radius(radius),type(type),dir(dir)
+    Bullet(int row, int col,int hurt,int radius ,std::string type, double dir)
+    :row_id(row),col_id(col),hurt(hurt),radius(radius),type(type),dir(dir)
     {
         //qDebug()<<"Bullet init";
         this->row_id = row;
         this->col_id = col;
         if(type == "enemy"||type == "mine")
             this->type = type;
-        this->hurt=1;
         this->dir=dir;
         this->radius=radius;
         if(type == "mine")
             this->speed=15;
         else if(type == "enemy")
-            this->speed=7;
+            this->speed=15;
         //timer = new QTimer(this);  
         //QObject::connect(timer, &QTimer::timeout, &Bullet::move); 
         //timer->start(100);

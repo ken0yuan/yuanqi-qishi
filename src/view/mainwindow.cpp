@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     //paintflag=0;
     runtime->start(1000);
     bulletmovetime->start(15);
-    enemyshottime->start(2000);
+    enemyshottime->start(700);
     connect(runtime,SIGNAL(timeout()),this,SLOT(update()));
     connect(runtime,SIGNAL(timeout()),this,SLOT(slotrandomdirection()));
     connect(bulletmovetime,SIGNAL(timeout()),this,SLOT(slotbulletmove()));
@@ -377,7 +377,17 @@ void MainWindow::paintEvent(QPaintEvent *event)
     painter.drawImage(132,72,red);
     painter.drawImage(132,116,grey);
     painter.drawImage(132,166,blue);
-
+    for (int i = 0; i < (*E).size(); i++)
+    {
+        QImage monsterHP;
+        if((*E)[i]->getType()=="pig")
+            monsterHP = redbar.scaled(((double)(*E)[i]->getHP()/pigMaxHP)*(*E)[i]->getRadius()*2,18);
+        else if((*E)[i]->getType()=="boss")
+            monsterHP = redbar.scaled(((double)(*E)[i]->getHP()/bossMaxHP)*(*E)[i]->getRadius()*2,18);
+        else
+            monsterHP = redbar.scaled(((double)(*E)[i]->getHP()/archerMaxHP)*(*E)[i]->getRadius()*2,18);
+        painter.drawImage((*E)[i]->getRowId()-(*E)[i]->getRadius(),(*E)[i]->getColId()-(*E)[i]->getRadius()-20,monsterHP);
+    }
     QFont font("Arial", 20); // 字体、大小
     painter.setFont(font);
     painter.setPen(Qt::white);

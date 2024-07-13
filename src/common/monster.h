@@ -4,6 +4,9 @@
 #include<string>
 #include<cmath>
 #define FRIGHTEN_RADIUS 1000
+#define pigMaxHP 10
+#define archerMaxHP 5
+#define bossMaxHP 30
 class Enemy{
     //Q_OBJECT
 public:
@@ -18,15 +21,15 @@ public:
         this->speed=5;
         if (type == "pig")
         {
-            this->HP=2;
+            this->HP=pigMaxHP;
         }
         else if (type=="archer")
         {
-            this->HP=4;
+            this->HP=archerMaxHP;
         }
         else if (type=="boss")
         {
-            this->HP=10;
+            this->HP=bossMaxHP;
         }
         //startTimer = new QTimer(this);
         //moveTimer = new QTimer(this);
@@ -40,6 +43,7 @@ public:
     int getColId() const {return col_id;};
     int getRadius() const {return radius;};
     int getSpeed() const {return speed;};
+    int getHP() const {return HP;};
     bool getFrighten(int row, int col) 
     {
         if((row-row_id)*(row-row_id)+(col-col_id)*(col-col_id)<=FRIGHTEN_RADIUS*FRIGHTEN_RADIUS)
