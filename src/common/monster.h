@@ -14,7 +14,8 @@ public:
         if(type == "pig"||type == "boss" ||type == "archer")
             this->type = type;
         this->frighten=false;
-        this->speed=5.0;
+        this->radius=70;
+        this->speed=5;
         //startTimer = new QTimer(this);
         //moveTimer = new QTimer(this);
         //stopTimer = new QTimer(this);
@@ -26,6 +27,7 @@ public:
     int getRowId() const {return row_id;};
     int getColId() const {return col_id;};
     int getRadius() const {return radius;};
+    int getSpeed() const {return speed;};
     bool getFrighten(int row, int col) 
     {
         if((row-row_id)*(row-row_id)+(col-col_id)*(col-col_id)<=FRIGHTEN_RADIUS*FRIGHTEN_RADIUS)
@@ -100,7 +102,7 @@ private:
     int col_id;
     int radius;
     double dir;//采用弧度制，正右为0
-    double speed;
+    int  speed;
     bool stop;//建议采用随机定时赋值，考虑怪在不被惊动时动与否
     bool frighten;//通过采用人与怪的距离判断是否被惊动
     std::string type;
