@@ -26,6 +26,7 @@ std::shared_ptr<std::vector<std::shared_ptr<Bullet>>> dataModel::get_bullet() th
 bool dataModel::shot(double dir)
 {
     //qDebug()<<"modelshot";
+    if(r->shot(2))
     b->push_back(std::make_shared<Bullet>(r->getRowId(),r->getColId(), 20, "mine", dir));
     //qDebug()<<b.size();
     Fire_OnPropertyChanged("bulletMove");

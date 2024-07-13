@@ -1,11 +1,11 @@
 #ifndef ROLE_H
 #define ROLE_H//建议为圆形，适合判断碰撞
 #include<string>
-#include <QTimer>  
-#include <QObject>  
-#include <QPainter>  
-#include <QWidget>
-#include <QKeyEvent>
+//#include <QTimer>  
+//#include <QObject>  
+//#include <QPainter>  
+//#include <QWidget>
+//#include <QKeyEvent>
 #include"weapon.h"
 
 #define MAXHP 5
@@ -22,9 +22,9 @@ public:
         this->speed=15;
         this->radius=70;
         this->direction=0;
-        this->HP=4;
-        this->MP=356;
-        this->SP=3;
+        this->HP=MAXHP;
+        this->MP=MAXMP;
+        this->SP=MAXSP;
     };
     int getRowId() const {return row_id;};
     int getColId() const {return col_id;};

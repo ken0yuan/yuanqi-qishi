@@ -5,7 +5,7 @@
 #include<cmath>
 #define FRIGHTEN_RADIUS 200
 class Enemy{
-    Q_OBJECT
+    //Q_OBJECT
 public:
     Enemy(int row, int col, std::string type)
     {

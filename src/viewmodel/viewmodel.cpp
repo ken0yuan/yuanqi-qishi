@@ -53,7 +53,7 @@ bool viewmodel::bulletMove(int i)
 bool viewmodel::bulletMove(Bullet* q)
 {
     //qDebug()<<"viewmodelbulletMove";
-    datamodel->bulletMove(q);
+    return datamodel->bulletMove(q);
 }
 bool viewmodel::enemyMove(double dir,int i)
 {
